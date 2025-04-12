@@ -1,0 +1,23 @@
+# Archivos y carpetas de Visual Studio
+.vs/
+*.user
+*.suo
+
+# Build output
+bin/
+obj/
+
+# Archivos temporales
+*.log
+*.tmp
+*.cache
+*.pdb
+*.exe
+
+# Otros archivos generados automáticamente
+*.dbmdl
+*.aps
+*.ncb
+*.sdf
+*.opensdf
+*.VC.db
