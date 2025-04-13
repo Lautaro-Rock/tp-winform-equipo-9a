@@ -21,5 +21,11 @@ namespace TpWinForm_Equipo9A
         {
 
         }
+
+        private void listadoDeProductosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ArticuloNegocio negocio = new ArticuloNegocio();
+            dgvArticulos.DataSource = negocio.listar(); 
+        }
     }
 }
