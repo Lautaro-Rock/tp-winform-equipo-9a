@@ -19,7 +19,8 @@ namespace TpWinForm_Equipo9A
 
         private void Form2_Load(object sender, EventArgs e)
         {
-
+            ArticuloNegocio negocio = new ArticuloNegocio();
+            dgvArticulos.DataSource = negocio.listar();
         }
 
         private void listadoDeProductosToolStripMenuItem_Click(object sender, EventArgs e)

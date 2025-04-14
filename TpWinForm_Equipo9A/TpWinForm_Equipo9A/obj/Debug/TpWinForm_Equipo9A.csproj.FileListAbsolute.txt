@@ -1,0 +1,14 @@
+C:\Users\joasa\OneDrive\Desktop\Repo TP3\tp-winform-equipo-9a\TpWinForm_Equipo9A\TpWinForm_Equipo9A\bin\Debug\TpWinForm_Equipo9A.exe.config
+C:\Users\joasa\OneDrive\Desktop\Repo TP3\tp-winform-equipo-9a\TpWinForm_Equipo9A\TpWinForm_Equipo9A\bin\Debug\TpWinForm_Equipo9A.exe
+C:\Users\joasa\OneDrive\Desktop\Repo TP3\tp-winform-equipo-9a\TpWinForm_Equipo9A\TpWinForm_Equipo9A\bin\Debug\TpWinForm_Equipo9A.pdb
+C:\Users\joasa\OneDrive\Desktop\Repo TP3\tp-winform-equipo-9a\TpWinForm_Equipo9A\TpWinForm_Equipo9A\obj\Debug\TpWinForm_Equipo9A.csproj.AssemblyReference.cache
+C:\Users\joasa\OneDrive\Desktop\Repo TP3\tp-winform-equipo-9a\TpWinForm_Equipo9A\TpWinForm_Equipo9A\obj\Debug\TpWinForm_Equipo9A.titlePrincipal.resources
+C:\Users\joasa\OneDrive\Desktop\Repo TP3\tp-winform-equipo-9a\TpWinForm_Equipo9A\TpWinForm_Equipo9A\obj\Debug\TpWinForm_Equipo9A.Form2.resources
+C:\Users\joasa\OneDrive\Desktop\Repo TP3\tp-winform-equipo-9a\TpWinForm_Equipo9A\TpWinForm_Equipo9A\obj\Debug\TpWinForm_Equipo9A.Properties.Resources.resources
+C:\Users\joasa\OneDrive\Desktop\Repo TP3\tp-winform-equipo-9a\TpWinForm_Equipo9A\TpWinForm_Equipo9A\obj\Debug\TpWinForm_Equipo9A.csproj.GenerateResource.cache
+C:\Users\joasa\OneDrive\Desktop\Repo TP3\tp-winform-equipo-9a\TpWinForm_Equipo9A\TpWinForm_Equipo9A\obj\Debug\TpWinForm_Equipo9A.csproj.CoreCompileInputs.cache
+C:\Users\joasa\OneDrive\Desktop\Repo TP3\tp-winform-equipo-9a\TpWinForm_Equipo9A\TpWinForm_Equipo9A\obj\Debug\TpWinForm_Equipo9A.exe
+C:\Users\joasa\OneDrive\Desktop\Repo TP3\tp-winform-equipo-9a\TpWinForm_Equipo9A\TpWinForm_Equipo9A\obj\Debug\TpWinForm_Equipo9A.pdb
+C:\Users\joasa\OneDrive\Desktop\Repo TP3\tp-winform-equipo-9a\TpWinForm_Equipo9A\TpWinForm_Equipo9A\obj\Debug\TpWinForm_Equipo9A.Form3.resources
+C:\Users\joasa\OneDrive\Desktop\Repo TP3\tp-winform-equipo-9a\TpWinForm_Equipo9A\TpWinForm_Equipo9A\obj\Debug\TpWinForm_Equipo9A.Form4.resources
+C:\Users\joasa\OneDrive\Desktop\Repo TP3\tp-winform-equipo-9a\TpWinForm_Equipo9A\TpWinForm_Equipo9A\obj\Debug\TpWinForm_Equipo9A.Form5.resources
