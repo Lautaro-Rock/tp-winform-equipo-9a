@@ -65,5 +65,25 @@ namespace TpWinForm_Equipo9A
                 data.cerrarConexion();
             }
         }
+
+        public void eliminar(Articulo nuevo)
+        {
+            AccesoDatos data = new AccesoDatos();
+
+            try
+            {
+                data.setearConsulta("DELETE FROM ARTICULOS WHERE Nombre='" + nuevo.Nombre + "'");
+                data.ejecutarAccion();
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                data.cerrarConexion();
+            }
+        }
     }
 }
