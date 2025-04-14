@@ -17,7 +17,7 @@ namespace TpWinForm_Equipo9A
 
             try 
 	        {
-                conexion.ConnectionString = "server=localhost; database=CATALOGO_P3_DB; Persist Security Info=True; User ID= sa; Password=Contra993!";
+                conexion.ConnectionString = "server=.\\SQLEXPRESS; database=CATALOGO_P3_DB; integrated security=true";
                 comando.CommandType = System.Data.CommandType.Text; 
                 comando.CommandText = "Select Id, Nombre, Descripcion From ARTICULOS";
                 comando.Connection = conexion;
