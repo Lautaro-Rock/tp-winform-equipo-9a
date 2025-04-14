@@ -32,13 +32,13 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.listadoDeProductosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.productosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.agregarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eliminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.modificarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.verDetalleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.buscarPorCriterioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.listadoDeProductosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dgvArticulos = new System.Windows.Forms.DataGridView();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).BeginInit();
@@ -66,6 +66,13 @@
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             // 
+            // listadoDeProductosToolStripMenuItem
+            // 
+            this.listadoDeProductosToolStripMenuItem.Name = "listadoDeProductosToolStripMenuItem";
+            this.listadoDeProductosToolStripMenuItem.Size = new System.Drawing.Size(130, 20);
+            this.listadoDeProductosToolStripMenuItem.Text = "Listado de productos";
+            this.listadoDeProductosToolStripMenuItem.Click += new System.EventHandler(this.listadoDeProductosToolStripMenuItem_Click);
+            // 
             // productosToolStripMenuItem
             // 
             this.productosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -87,19 +94,20 @@
             // eliminarToolStripMenuItem
             // 
             this.eliminarToolStripMenuItem.Name = "eliminarToolStripMenuItem";
-            this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
+            this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.eliminarToolStripMenuItem.Text = "Eliminar";
+            this.eliminarToolStripMenuItem.Click += new System.EventHandler(this.eliminarToolStripMenuItem_Click);
             // 
             // modificarToolStripMenuItem
             // 
             this.modificarToolStripMenuItem.Name = "modificarToolStripMenuItem";
-            this.modificarToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
+            this.modificarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.modificarToolStripMenuItem.Text = "Modificar";
             // 
             // verDetalleToolStripMenuItem
             // 
             this.verDetalleToolStripMenuItem.Name = "verDetalleToolStripMenuItem";
-            this.verDetalleToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
+            this.verDetalleToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.verDetalleToolStripMenuItem.Text = "Ver detalle";
             // 
             // buscarPorCriterioToolStripMenuItem
@@ -107,13 +115,6 @@
             this.buscarPorCriterioToolStripMenuItem.Name = "buscarPorCriterioToolStripMenuItem";
             this.buscarPorCriterioToolStripMenuItem.Size = new System.Drawing.Size(115, 20);
             this.buscarPorCriterioToolStripMenuItem.Text = "Buscar por criterio";
-            // 
-            // listadoDeProductosToolStripMenuItem
-            // 
-            this.listadoDeProductosToolStripMenuItem.Name = "listadoDeProductosToolStripMenuItem";
-            this.listadoDeProductosToolStripMenuItem.Size = new System.Drawing.Size(130, 20);
-            this.listadoDeProductosToolStripMenuItem.Text = "Listado de productos";
-            this.listadoDeProductosToolStripMenuItem.Click += new System.EventHandler(this.listadoDeProductosToolStripMenuItem_Click);
             // 
             // dgvArticulos
             // 
