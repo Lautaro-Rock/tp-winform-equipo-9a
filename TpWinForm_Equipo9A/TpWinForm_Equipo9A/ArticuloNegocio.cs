@@ -17,7 +17,7 @@ namespace TpWinForm_Equipo9A
 
             try 
 	        {
-                conexion.ConnectionString = "server=.\\SQLEXPRESS; database=CATALOGO_P3_DB; integrated security=true";
+                conexion.ConnectionString = "server=localhost; database=CATALOGO_P3_DB; Persist Security Info=True; User ID= sa; Password=Contra993!";
                 comando.CommandType = System.Data.CommandType.Text; 
                 comando.CommandText = "Select Id, Nombre, Descripcion From ARTICULOS";
                 comando.Connection = conexion;
@@ -53,6 +53,26 @@ namespace TpWinForm_Equipo9A
             try
             {
                 data.setearConsulta("INSERT INTO ARTICULOS (Nombre, Descripcion) VALUES ('" + nuevo.Nombre + "', '" + nuevo.Descripcion + "')");
+                data.ejecutarAccion();
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                data.cerrarConexion();
+            }
+        }
+
+        public void eliminar(Articulo nuevo)
+        {
+            AccesoDatos data = new AccesoDatos();
+
+            try
+            {
+                data.setearConsulta("DELETE FROM ARTICULOS WHERE Nombre='"+nuevo.Nombre+"'");
                 data.ejecutarAccion();
 
             }
