@@ -16,5 +16,17 @@ namespace TpWinForm_Equipo9A
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form3 ventana3 = new Form3();
+            ventana3.ShowDialog();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Form4 ventana4 = new Form4();
+            ventana4.ShowDialog();
+        }
     }
 }
