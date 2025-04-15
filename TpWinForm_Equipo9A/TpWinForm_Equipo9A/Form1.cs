@@ -31,6 +31,10 @@ namespace TpWinForm_Equipo9A
         {
             Form2 ventanaMenu = new Form2();
             ventanaMenu.ShowDialog();
+            //Form5 ventanaMenu = new Form5();
+            //ventanaMenu.ShowDialog();
+
+
         }
 
         private void label2_Click_1(object sender, EventArgs e)
