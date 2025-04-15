@@ -28,5 +28,11 @@ namespace TpWinForm_Equipo9A
             Form4 ventana4 = new Form4();
             ventana4.ShowDialog();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Form2 ventana2 = new Form2();
+            ventana2.ShowDialog();
+        }
     }
 }
