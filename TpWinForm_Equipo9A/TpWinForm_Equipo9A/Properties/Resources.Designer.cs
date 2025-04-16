@@ -113,6 +113,26 @@ namespace TpWinForm_Equipo9A.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap search_icon_icons_com_50045 {
+            get {
+                object obj = ResourceManager.GetObject("search_icon-icons.com_50045", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap search_icon_icons1 {
+            get {
+                object obj = ResourceManager.GetObject("search_icon-icons1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap tab_client_icon_icons_com_72436 {
             get {
                 object obj = ResourceManager.GetObject("tab_client_icon-icons.com_72436", resourceCulture);
