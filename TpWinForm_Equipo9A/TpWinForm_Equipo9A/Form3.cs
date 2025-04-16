@@ -36,7 +36,9 @@ namespace TpWinForm_Equipo9A
             try
             {
                 newArticulo.Nombre = newNombre.Text;
-                newArticulo.Descripcion=newDescripcion.Text;
+                newArticulo.Descripcion=inputDescripcion.Text;
+                newArticulo.Codigo=inputCod.Text;
+                newArticulo.Precio=inputPrecio.Value;
 
                 newNegocio.agregar(newArticulo);
                 MessageBox.Show("Agregado exitosamente");
@@ -53,6 +55,16 @@ namespace TpWinForm_Equipo9A
         }
 
         private void Form3_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
         {
 
         }
