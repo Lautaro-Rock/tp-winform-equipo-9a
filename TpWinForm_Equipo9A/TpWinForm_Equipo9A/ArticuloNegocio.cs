@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
+using System.Globalization;
 namespace TpWinForm_Equipo9A
 {
     class ArticuloNegocio
@@ -19,7 +20,7 @@ namespace TpWinForm_Equipo9A
 	        {
                 conexion.ConnectionString = "server=.\\SQLEXPRESS; database=CATALOGO_P3_DB; integrated security=true";
                 comando.CommandType = System.Data.CommandType.Text; 
-                comando.CommandText = "Select Id, Nombre, Descripcion From ARTICULOS";
+                comando.CommandText = "Select Id, Nombre, Descripcion, Precio, Codigo From ARTICULOS";
                 comando.Connection = conexion;
 
                 conexion.Open();
@@ -31,6 +32,8 @@ namespace TpWinForm_Equipo9A
                     aux.Nombre = (string)lector["Nombre"];
                     aux.Descripcion = (string)lector["Descripcion"];
                     aux.ID = (int)lector["Id"];
+                    aux.Precio = lector["Precio"] != DBNull.Value ? Convert.ToDecimal(lector["Precio"]):0m;
+                    aux.Codigo = lector["Codigo"] != DBNull.Value ? lector["Codigo"].ToString() : "";
 
                     lista.Add(aux); 
 
@@ -52,7 +55,8 @@ namespace TpWinForm_Equipo9A
 
             try
             {
-                data.setearConsulta("INSERT INTO ARTICULOS (Nombre, Descripcion) VALUES ('" + nuevo.Nombre + "', '" + nuevo.Descripcion + "')");
+                data.setearConsulta("INSERT INTO ARTICULOS (Nombre, Descripcion, Codigo, Precio) VALUES ('" + nuevo.Nombre + "', '" + nuevo.Descripcion + "', '" + nuevo.Codigo + "', " + nuevo.Precio.ToString(CultureInfo.InvariantCulture) + ")");
+
                 data.ejecutarAccion();
 
             }
