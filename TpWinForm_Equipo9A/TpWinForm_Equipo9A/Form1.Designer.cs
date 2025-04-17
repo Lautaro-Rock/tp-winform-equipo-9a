@@ -32,9 +32,9 @@
             this.subtitleLabel2 = new System.Windows.Forms.Label();
             this.buttonContinuar = new System.Windows.Forms.Button();
             this.containerDevelopers = new System.Windows.Forms.GroupBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.containerDevelopers.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -65,7 +65,7 @@
             // 
             // buttonContinuar
             // 
-            this.buttonContinuar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.buttonContinuar.BackColor = System.Drawing.Color.White;
             this.buttonContinuar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonContinuar.Font = new System.Drawing.Font("Ravie", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonContinuar.ForeColor = System.Drawing.SystemColors.Desktop;
@@ -92,16 +92,15 @@
             this.containerDevelopers.Text = "Desarolladores";
             this.containerDevelopers.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
-            // label2
+            // label4
             // 
-            this.label2.AutoSize = true;
-            this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label2.Location = new System.Drawing.Point(41, 36);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(176, 20);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Marcos Colombres";
-            this.label2.Click += new System.EventHandler(this.label2_Click_2);
+            this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label4.Location = new System.Drawing.Point(581, 36);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(152, 20);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "Joaquin Sanchez";
             // 
             // label3
             // 
@@ -113,21 +112,22 @@
             this.label3.TabIndex = 1;
             this.label3.Text = "Lautaro Maldonado";
             // 
-            // label4
+            // label2
             // 
-            this.label4.AutoSize = true;
-            this.label4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label4.Location = new System.Drawing.Point(581, 36);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(152, 20);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "Joaquin Sanchez";
+            this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label2.Location = new System.Drawing.Point(41, 36);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(176, 20);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Marcos Colombres";
+            this.label2.Click += new System.EventHandler(this.label2_Click_2);
             // 
             // titlePrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.LightSlateGray;
+            this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.containerDevelopers);
             this.Controls.Add(this.buttonContinuar);

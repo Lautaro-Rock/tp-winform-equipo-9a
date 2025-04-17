@@ -35,6 +35,7 @@ namespace TpWinForm_Equipo9A
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
+                return lista;
             }
 
             finally
