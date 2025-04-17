@@ -51,16 +51,5 @@ namespace TpWinForm_Equipo9A
             Form4 ventanaEliminar = new Form4();
             ventanaEliminar.ShowDialog();
         }
-
-        private void Form5_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            Form6 ventanaBuscarArt = new Form6();
-            ventanaBuscarArt.ShowDialog();
-        }
     }
 }
