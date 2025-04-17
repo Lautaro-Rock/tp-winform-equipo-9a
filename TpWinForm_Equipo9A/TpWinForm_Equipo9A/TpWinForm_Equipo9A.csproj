@@ -79,12 +79,6 @@
     <Compile Include="Form5.Designer.cs">
       <DependentUpon>Form5.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form6.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form6.Designer.cs">
-      <DependentUpon>Form6.cs</DependentUpon>
-    </Compile>
     <Compile Include="Marca.cs" />
     <Compile Include="MarcaNegocio.cs" />
     <Compile Include="Program.cs" />
@@ -103,9 +97,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form5.resx">
       <DependentUpon>Form5.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form6.resx">
-      <DependentUpon>Form6.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -147,57 +138,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\tab_client_icon-icons.com_72436.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\search_icon-icons.com_50045.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\search_icon-icons.com_500451.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\search-circular-symbol_icon-icons.com_53800.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\search_find_look_locate_icon-icons.com_59984 %281%29.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\IMG-20250416-WA0004.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\1000092099.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\icons8-search-150.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\icons8-search-150 %282%29.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\icons8-search-150 %282%291.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\icons8-search-64.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\icons8-search-641.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\icons8-search-64 %281%29.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\icons8-search-50 %281%29.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\icons8-search-50 %282%29.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\icons8-search-50 %283%29.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\icons8-search-30.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\icons8-search-301.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
