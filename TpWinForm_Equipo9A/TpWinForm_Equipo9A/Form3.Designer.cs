@@ -45,7 +45,9 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Black;
             this.label1.Font = new System.Drawing.Font("Showcard Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(104, 48);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(223, 27);
@@ -57,6 +59,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(82, 95);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(76, 18);
@@ -68,6 +71,7 @@
             // 
             this.TextDescripcion.AutoSize = true;
             this.TextDescripcion.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TextDescripcion.ForeColor = System.Drawing.Color.White;
             this.TextDescripcion.Location = new System.Drawing.Point(49, 226);
             this.TextDescripcion.Name = "TextDescripcion";
             this.TextDescripcion.Size = new System.Drawing.Size(109, 18);
@@ -90,30 +94,33 @@
             // 
             // newAceptar
             // 
+            this.newAceptar.BackColor = System.Drawing.Color.White;
             this.newAceptar.Font = new System.Drawing.Font("Showcard Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.newAceptar.Location = new System.Drawing.Point(109, 276);
             this.newAceptar.Name = "newAceptar";
             this.newAceptar.Size = new System.Drawing.Size(232, 40);
             this.newAceptar.TabIndex = 5;
             this.newAceptar.Text = "Agregar producto ";
-            this.newAceptar.UseVisualStyleBackColor = true;
+            this.newAceptar.UseVisualStyleBackColor = false;
             this.newAceptar.Click += new System.EventHandler(this.button1_Click);
             // 
             // newCancelar
             // 
+            this.newCancelar.BackColor = System.Drawing.Color.White;
             this.newCancelar.Font = new System.Drawing.Font("Showcard Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.newCancelar.Location = new System.Drawing.Point(164, 345);
             this.newCancelar.Name = "newCancelar";
             this.newCancelar.Size = new System.Drawing.Size(134, 40);
             this.newCancelar.TabIndex = 6;
             this.newCancelar.Text = "Salir";
-            this.newCancelar.UseVisualStyleBackColor = true;
+            this.newCancelar.UseVisualStyleBackColor = false;
             this.newCancelar.Click += new System.EventHandler(this.button2_Click);
             // 
             // textCod
             // 
             this.textCod.AutoSize = true;
             this.textCod.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textCod.ForeColor = System.Drawing.Color.White;
             this.textCod.Location = new System.Drawing.Point(89, 140);
             this.textCod.Name = "textCod";
             this.textCod.Size = new System.Drawing.Size(69, 18);
@@ -155,6 +162,7 @@
             // 
             this.textPrecio.AutoSize = true;
             this.textPrecio.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textPrecio.ForeColor = System.Drawing.Color.White;
             this.textPrecio.Location = new System.Drawing.Point(82, 182);
             this.textPrecio.Name = "textPrecio";
             this.textPrecio.Size = new System.Drawing.Size(65, 18);
@@ -166,7 +174,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(448, 450);
             this.Controls.Add(this.textPrecio);
             this.Controls.Add(this.inputPrecio);
