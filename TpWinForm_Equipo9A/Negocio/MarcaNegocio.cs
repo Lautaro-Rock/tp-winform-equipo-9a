@@ -1,15 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Security.AccessControl;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+using Dominio;
 
-
-namespace TpWinForm_Equipo9A
+namespace Negocio
 {
-    internal class MarcaNegocio
+    public class MarcaNegocio
     {
         public List<Marca> lista()
         {
@@ -34,8 +29,7 @@ namespace TpWinForm_Equipo9A
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
-                return lista;
+                throw (ex);
             }
 
             finally

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TpWinForm_Equipo9A
+namespace Negocio
 {
     public class AccesoDatos
     {
