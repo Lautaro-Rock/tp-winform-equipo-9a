@@ -26,13 +26,26 @@ namespace TpWinForm_Equipo9A
             listaArticulo = negocio.listar(); 
             dgvArticulo.DataSource = listaArticulo;
             dgvArticulo.Columns["UrlImagen"].Visible = false;
-            pbxArticulo.Load(listaArticulo[0].UrlImagen.ImagenUrl.ToString());
+            cargarImagen(listaArticulo[0].UrlImagen.ImagenUrl.ToString());
         }
 
         private void dgvArticulo_SelectionChanged(object sender, EventArgs e)
         {
             Articulo seleccionado = (Articulo)dgvArticulo.CurrentRow.DataBoundItem; 
-            pbxArticulo.Load(seleccionado.UrlImagen.ImagenUrl.ToString());
+            cargarImagen(seleccionado.UrlImagen.ImagenUrl.ToString());
+        }
+
+        private void cargarImagen(string imagen) 
+        {
+            try
+            {
+                pbxArticulo.Load(imagen);
+            }
+            catch (Exception)
+            {
+
+                pbxArticulo.Load("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSf0ee70UsCrUU3czX7qfX0gCjXy9Qo8nfiuQ&s");
+            }
         }
     }
 }
