@@ -19,9 +19,9 @@ namespace Negocio
 
             try 
 	        {
-                conexion.ConnectionString = "server=.\\SQLEXPRESS; database=CATALOGO_P3_DB; integrated security=true";
+                conexion.ConnectionString = "server=localhost; database=CATALOGO_P3_DB; Persist Security Info=True; User ID= sa; Password=Contra993!";
                 comando.CommandType = System.Data.CommandType.Text; 
-                comando.CommandText = "Select Id, Nombre, Descripcion, Precio, Codigo From ARTICULOS";
+                comando.CommandText = "Select A.Id, Codigo, Nombre, Descripcion, IdMarca, IdCategoria, Precio, ImagenUrl From ARTICULOS A, IMAGENES Where A.Id = IdArticulo ";
                 comando.Connection = conexion;
 
                 conexion.Open();
@@ -35,6 +35,8 @@ namespace Negocio
                     aux.ID = (int)lector["Id"];
                     aux.Precio = lector["Precio"] != DBNull.Value ? Convert.ToDecimal(lector["Precio"]):0m;
                     aux.Codigo = lector["Codigo"] != DBNull.Value ? lector["Codigo"].ToString() : "";
+                    aux.UrlImagen = new Imagen();
+                    aux.UrlImagen.ImagenUrl = (string)lector["ImagenUrl"];
 
                     lista.Add(aux); 
 

@@ -14,6 +14,7 @@ namespace TpWinForm_Equipo9A
 {
     public partial class Form2 : Form
     {
+        private List<Articulo> listaArticulo;
         public Form2()
         {
             InitializeComponent();
@@ -22,7 +23,29 @@ namespace TpWinForm_Equipo9A
         private void Form2_Load(object sender, EventArgs e)
         {
             ArticuloNegocio negocio = new ArticuloNegocio();
-            dgvArticulo.DataSource = negocio.listar(); 
+            listaArticulo = negocio.listar(); 
+            dgvArticulo.DataSource = listaArticulo;
+            dgvArticulo.Columns["UrlImagen"].Visible = false;
+            cargarImagen(listaArticulo[0].UrlImagen.ImagenUrl.ToString());
+        }
+
+        private void dgvArticulo_SelectionChanged(object sender, EventArgs e)
+        {
+            Articulo seleccionado = (Articulo)dgvArticulo.CurrentRow.DataBoundItem; 
+            cargarImagen(seleccionado.UrlImagen.ImagenUrl.ToString());
+        }
+
+        private void cargarImagen(string imagen) 
+        {
+            try
+            {
+                pbxArticulo.Load(imagen);
+            }
+            catch (Exception)
+            {
+
+                pbxArticulo.Load("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSf0ee70UsCrUU3czX7qfX0gCjXy9Qo8nfiuQ&s");
+            }
         }
     }
 }
