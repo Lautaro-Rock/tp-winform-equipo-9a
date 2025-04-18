@@ -9,5 +9,7 @@ namespace Dominio
         public decimal Precio {  get; set; } 
         public string Codigo { get; set; }
 
+        public Imagen UrlImagen { get; set; }
+
     }
 }
