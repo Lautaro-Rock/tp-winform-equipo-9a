@@ -41,7 +41,8 @@ namespace TpWinForm_Equipo9A
                 newArticulo.Descripcion=inputDescripcion.Text;
                 newArticulo.Codigo=inputCod.Text;
                 newArticulo.Precio=inputPrecio.Value;
-
+                newArticulo.Marca = (Marca)cboMarca.SelectedItem;
+                newArticulo.Categoria = (Categoria)cboCategoria.SelectedItem;
                 newNegocio.agregar(newArticulo);
                 MessageBox.Show("Agregado exitosamente");
             }
