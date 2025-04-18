@@ -59,9 +59,11 @@ namespace TpWinForm_Equipo9A
         private void Form3_Load(object sender, EventArgs e)
         {
             MarcaNegocio newMarca = new MarcaNegocio();
+            CategoriaNegocio newCategoria = new CategoriaNegocio();
             try
             {
                 cboMarca.DataSource = newMarca.lista();
+                cboCategoria.DataSource = newCategoria.lista();
             }
             catch (Exception ex)
             {
