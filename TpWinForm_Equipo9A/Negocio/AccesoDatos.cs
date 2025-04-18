@@ -42,6 +42,10 @@ namespace Negocio
  
         }
 
+        public void setearParametro(string nombre, object valor)
+        {
+            conexionCommand.Parameters.AddWithValue(nombre, valor);
+        }
         public void ejecutarAccion()
         {
             conexionCommand.Connection= conexion;
