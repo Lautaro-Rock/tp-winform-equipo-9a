@@ -15,6 +15,7 @@ namespace TpWinForm_Equipo9A
 {
     public partial class Form3 : Form
     {
+        
         public Form3()
         {
             InitializeComponent();
@@ -57,7 +58,16 @@ namespace TpWinForm_Equipo9A
 
         private void Form3_Load(object sender, EventArgs e)
         {
+            MarcaNegocio newMarca = new MarcaNegocio();
+            try
+            {
+                cboMarca.DataSource = newMarca.lista();
+            }
+            catch (Exception ex)
+            {
 
+                MessageBox.Show(ex.ToString());
+            }
         }
 
         private void label5_Click(object sender, EventArgs e)
