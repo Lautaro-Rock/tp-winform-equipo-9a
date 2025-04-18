@@ -5,9 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Globalization;
-namespace TpWinForm_Equipo9A
+using Dominio;
+namespace Negocio
 {
-    class ArticuloNegocio
+    public class ArticuloNegocio
     {
         public List<Articulo> listar()
         {
@@ -45,7 +46,7 @@ namespace TpWinForm_Equipo9A
 	        catch (Exception ex)
 	        {
 
-		        throw(ex);
+		        throw ex;
 	        }
         }
 
