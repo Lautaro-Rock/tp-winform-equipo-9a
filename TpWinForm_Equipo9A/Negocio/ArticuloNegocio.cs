@@ -58,7 +58,12 @@ namespace Negocio
 
             try
             {
-                data.setearConsulta("INSERT INTO ARTICULOS (Nombre, Descripcion, Codigo, Precio, IdMarca, IdCategoria) VALUES ('" + nuevo.Nombre + "', '" + nuevo.Descripcion + "', '" + nuevo.Codigo + "', " + nuevo.Precio.ToString(CultureInfo.InvariantCulture) + ", @IdMarca, @IdCategoria)");
+                data.setearConsulta("BEGIN TRANSACTION DECLARE @IdArticulo int; " +
+                    "INSERT INTO ARTICULOS(Nombre, Descripcion, Codigo, Precio, IdMarca, IdCategoria) " +
+                    "VALUES('" + nuevo.Nombre + "', '" + nuevo.Descripcion + "', '" + nuevo.Codigo + "', " + nuevo.Precio.ToString(CultureInfo.InvariantCulture) + ", @IdMarca, @IdCategoria) " +
+                    "SELECT @IdArticulo = scope_identity(); " +
+                    "INSERT INTO IMAGENES VALUES(@IdArticulo, '"+nuevo.UrlImagen.ImagenUrl+"'); " +
+                    "COMMIT");
                 data.setearParametro("@IdMarca", nuevo.Marca.ID);
                 data.setearParametro("@IdCategoria", nuevo.Categoria.ID);
                 data.ejecutarAccion();

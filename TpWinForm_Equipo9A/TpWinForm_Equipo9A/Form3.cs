@@ -52,6 +52,8 @@ namespace TpWinForm_Equipo9A
                 art.Descripcion = inputDescripcion.Text;
                 art.Codigo = inputCod.Text;
                 art.Precio = inputPrecio.Value;
+                art.UrlImagen = new Imagen();
+                art.UrlImagen.ImagenUrl = txtImagen.Text;
                 art.Marca = (Marca)cboMarca.SelectedItem;
                 art.Categoria = (Categoria)cboCategoria.SelectedItem;
 
@@ -125,5 +127,22 @@ namespace TpWinForm_Equipo9A
         {
 
         }
+
+        private void txtImagen_Leave(object sender, EventArgs e)
+        {
+            cargarImagen(txtImagen.Text);
+        }
+        private void cargarImagen(string imagen)
+        {
+          try
+          {
+            pbxImagen.Load(imagen);
+          }
+          catch (Exception)
+          {
+
+            pbxImagen.Load("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSf0ee70UsCrUU3czX7qfX0gCjXy9Qo8nfiuQ&s");
+          }
+       }
     }
 }
