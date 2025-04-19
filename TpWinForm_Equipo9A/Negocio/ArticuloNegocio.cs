@@ -13,35 +13,32 @@ namespace Negocio
         public List<Articulo> listar()
         {
             List<Articulo> lista = new List<Articulo>();
-            SqlConnection conexion = new SqlConnection();
-            SqlCommand comando = new SqlCommand();
-            SqlDataReader lector; 
+            AccesoDatos datos = new AccesoDatos();
 
             try 
 	        {
-                conexion.ConnectionString = "server=.\\SQLEXPRESS; database=CATALOGO_P3_DB; integrated security=true";
-                comando.CommandType = System.Data.CommandType.Text; 
-                comando.CommandText = "Select A.Id, Codigo, Nombre, Descripcion, IdMarca, IdCategoria, Precio, ImagenUrl From ARTICULOS A, IMAGENES Where A.Id = IdArticulo ";
-                comando.Connection = conexion;
+                datos.setearConsulta("Select A.Id, Codigo, Nombre, A.Descripcion, Precio, ImagenUrl, M.Descripcion as Marca, C.Descripcion as Categoria From ARTICULOS A, IMAGENES, CATEGORIAS C, MARCAS M Where A.Id = IdArticulo and A.IdCategoria = C.Id and A.IdMarca = M.Id; ");
+                datos.ejecutarLectura();
 
-                conexion.Open();
-                lector = comando.ExecuteReader();
-
-                while (lector.Read())
+                while (datos.ConexionDataReader.Read())
                 {
                     Articulo aux = new Articulo();
-                    aux.Nombre = (string)lector["Nombre"];
-                    aux.Descripcion = (string)lector["Descripcion"];
-                    aux.ID = (int)lector["Id"];
-                    aux.Precio = lector["Precio"] != DBNull.Value ? Convert.ToDecimal(lector["Precio"]):0m;
-                    aux.Codigo = lector["Codigo"] != DBNull.Value ? lector["Codigo"].ToString() : "";
+                    aux.Nombre = (string)datos.ConexionDataReader["Nombre"];
+                    aux.Descripcion = (string)datos.ConexionDataReader["Descripcion"];
+                    aux.ID = (int)datos.ConexionDataReader["Id"];
+                    aux.Precio = datos.ConexionDataReader["Precio"] != DBNull.Value ? Convert.ToDecimal(datos.ConexionDataReader["Precio"]):0m;
+                    aux.Codigo = datos.ConexionDataReader["Codigo"] != DBNull.Value ? datos.ConexionDataReader["Codigo"].ToString() : "";
                     aux.UrlImagen = new Imagen();
-                    aux.UrlImagen.ImagenUrl = (string)lector["ImagenUrl"];
+                    aux.UrlImagen.ImagenUrl = (string)datos.ConexionDataReader["ImagenUrl"];
+                    aux.Marca = new Marca(); 
+                    aux.Marca.Descripcion = (string)datos.ConexionDataReader["Marca"];
+                    aux.Categoria = new Categoria();
+                    aux.Categoria.Descripcion = (string)datos.ConexionDataReader["Categoria"];
 
                     lista.Add(aux); 
 
                 }
-                conexion.Close();
+
                 return lista; 
 
             }
@@ -50,6 +47,11 @@ namespace Negocio
 
 		        throw ex;
 	        }
+
+            finally
+            {
+                datos.cerrarConexion();
+            }
         }
 
         public void agregar(Articulo nuevo)
