@@ -67,11 +67,10 @@ namespace TpWinForm_Equipo9A
                 string filtro = txtFiltro.Text;
                 List<Articulo> list_filtrada = articuloNegocio.filtrar(campo, criterio, filtro); 
                 dataGridViewFitro.DataSource = list_filtrada;
-                pcBoxFiltro.Load(list_filtrada[0].UrlImagen.ImagenUrl.ToString());
-                pcBoxFiltro.SizeMode = PictureBoxSizeMode.StretchImage;
                 dataGridViewFitro.Columns["UrlImagen"].Visible = false;
                 dataGridViewFitro.Columns["Marca"].Visible = false;
                 dataGridViewFitro.Columns["Categoria"].Visible = false;
+                cargarImagen(list_filtrada[0].UrlImagen.ImagenUrl.ToString());
 
                 //PanelResultadoBusq.Controls.Add(imagen_filtrado);
                 //PanelResultadoBusq.Controls.Add(botonfiltrado);
@@ -87,8 +86,6 @@ namespace TpWinForm_Equipo9A
 
         private void Form6_Load(object sender, EventArgs e)
         {
-            ArticuloNegocio articuloNegocio = new ArticuloNegocio();
-            articulos = articuloNegocio.listar();
             cboCampo.Items.Add("Por ID ARTICULO");
             cboCampo.Items.Add("Nombre");
             cboCampo.Items.Add("Descripcion");
@@ -138,16 +135,23 @@ namespace TpWinForm_Equipo9A
         {
             
             Articulo seleccionado = (Articulo)dataGridViewFitro.CurrentRow.DataBoundItem;
+            cargarImagen(seleccionado.UrlImagen.ImagenUrl.ToString());
+            
 
+        }
+
+        private void cargarImagen(string imagen)
+        {
             try
             {
-                pcBoxFiltro.Load(seleccionado.UrlImagen.ImagenUrl.ToString());
+                pcBoxFiltro.SizeMode = PictureBoxSizeMode.StretchImage;
+                pcBoxFiltro.Load(imagen);
             }
-            catch
+            catch (Exception)
             {
+
                 pcBoxFiltro.Load("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSf0ee70UsCrUU3czX7qfX0gCjXy9Qo8nfiuQ&s");
             }
-
         }
     }
 }

@@ -15,10 +15,17 @@ namespace TpWinForm_Equipo9A
 {
     public partial class Form3 : Form
     {
-        
+        private Articulo art=null;
+
         public Form3()
         {
             InitializeComponent();
+        }
+
+        public Form3(Articulo articulo)
+        {
+            InitializeComponent();
+            this.art = articulo;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -33,18 +40,37 @@ namespace TpWinForm_Equipo9A
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Articulo newArticulo = new Articulo();
+            //Articulo newArticulo = new Articulo();
             ArticuloNegocio newNegocio= new ArticuloNegocio();
             try
             {
-                newArticulo.Nombre = newNombre.Text;
-                newArticulo.Descripcion=inputDescripcion.Text;
-                newArticulo.Codigo=inputCod.Text;
-                newArticulo.Precio=inputPrecio.Value;
-                newArticulo.Marca = (Marca)cboMarca.SelectedItem;
-                newArticulo.Categoria = (Categoria)cboCategoria.SelectedItem;
-                newNegocio.agregar(newArticulo);
-                MessageBox.Show("Agregado exitosamente");
+                if (art == null)
+                {
+                    art = new Articulo();
+                }
+                art.Nombre = newNombre.Text;
+                art.Descripcion = inputDescripcion.Text;
+                art.Codigo = inputCod.Text;
+                art.Precio = inputPrecio.Value;
+                art.UrlImagen = new Imagen();
+                art.UrlImagen.ImagenUrl = txtImagen.Text;
+                art.Marca = (Marca)cboMarca.SelectedItem;
+                art.Categoria = (Categoria)cboCategoria.SelectedItem;
+
+                if (art.ID != 0)
+                {
+                    newNegocio.editar(art);
+                    MessageBox.Show("Editado exitosamente");
+                }
+                else
+                {
+                    newNegocio.agregar(art);
+                    MessageBox.Show("Agregado exitosamente");
+                }
+
+                Close();
+
+
             }
             catch (Exception ex)
             {
@@ -64,7 +90,23 @@ namespace TpWinForm_Equipo9A
             try
             {
                 cboMarca.DataSource = newMarca.lista();
+                cboMarca.ValueMember = "ID";
+                cboMarca.DisplayMember = "Descripcion";
                 cboCategoria.DataSource = newCategoria.lista();
+                cboCategoria.ValueMember = "ID";
+                cboCategoria.DisplayMember = "Descripcion";
+
+                if (art != null) { 
+                 newNombre.Text= art.Nombre;
+                 inputCod.Text= art.Codigo;
+                 inputPrecio.Text= art.Precio.ToString();
+                 inputDescripcion.Text= art.Descripcion;
+                 txtImagen.Text = art.UrlImagen.ImagenUrl;
+                 cargarImagen(art.UrlImagen.ImagenUrl);
+                 cboMarca.SelectedValue = art.Marca.ID;
+                 cboCategoria.SelectedValue = art.Categoria.ID;
+                }
+
             }
             catch (Exception ex)
             {
@@ -82,5 +124,27 @@ namespace TpWinForm_Equipo9A
         {
 
         }
+
+        private void cboMarca_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtImagen_Leave(object sender, EventArgs e)
+        {
+            cargarImagen(txtImagen.Text);
+        }
+        private void cargarImagen(string imagen)
+        {
+          try
+          {
+            pbxImagen.Load(imagen);
+          }
+          catch (Exception)
+          {
+
+            pbxImagen.Load("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSf0ee70UsCrUU3czX7qfX0gCjXy9Qo8nfiuQ&s");
+          }
+       }
     }
 }
