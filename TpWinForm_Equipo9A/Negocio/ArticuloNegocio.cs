@@ -19,7 +19,7 @@ namespace Negocio
 
             try 
 	        {
-                conexion.ConnectionString = "server=.\\SQLEXPRESS; database=CATALOGO_P3_DB; integrated security=true";
+                conexion.ConnectionString = "server=localhost; database=CATALOGO_P3_DB; Persist Security Info=True; User ID= sa; Password=Contra993!";
                 comando.CommandType = System.Data.CommandType.Text; 
                 comando.CommandText = "Select A.Id, Codigo, Nombre, Descripcion, IdMarca, IdCategoria, Precio, ImagenUrl From ARTICULOS A, IMAGENES Where A.Id = IdArticulo ";
                 comando.Connection = conexion;
@@ -58,7 +58,12 @@ namespace Negocio
 
             try
             {
-                data.setearConsulta("INSERT INTO ARTICULOS (Nombre, Descripcion, Codigo, Precio, IdMarca, IdCategoria) VALUES ('" + nuevo.Nombre + "', '" + nuevo.Descripcion + "', '" + nuevo.Codigo + "', " + nuevo.Precio.ToString(CultureInfo.InvariantCulture) + ", @IdMarca, @IdCategoria)");
+                data.setearConsulta("BEGIN TRANSACTION DECLARE @IdArticulo int; " +
+                    "INSERT INTO ARTICULOS(Nombre, Descripcion, Codigo, Precio, IdMarca, IdCategoria) " +
+                    "VALUES('" + nuevo.Nombre + "', '" + nuevo.Descripcion + "', '" + nuevo.Codigo + "', " + nuevo.Precio.ToString(CultureInfo.InvariantCulture) + ", @IdMarca, @IdCategoria) " +
+                    "SELECT @IdArticulo = scope_identity(); " +
+                    "INSERT INTO IMAGENES VALUES(@IdArticulo, '"+nuevo.UrlImagen.ImagenUrl+"'); " +
+                    "COMMIT");
                 data.setearParametro("@IdMarca", nuevo.Marca.ID);
                 data.setearParametro("@IdCategoria", nuevo.Categoria.ID);
                 data.ejecutarAccion();
