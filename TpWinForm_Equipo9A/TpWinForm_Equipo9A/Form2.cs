@@ -47,5 +47,14 @@ namespace TpWinForm_Equipo9A
                 pbxArticulo.Load("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSf0ee70UsCrUU3czX7qfX0gCjXy9Qo8nfiuQ&s");
             }
         }
+
+        private void buttonEdit_Click(object sender, EventArgs e)
+        {
+            Articulo Seleccionado;
+            Seleccionado=(Articulo)dgvArticulo.CurrentRow.DataBoundItem;
+
+            Form3 modificar= new Form3(Seleccionado);
+            modificar.ShowDialog();
+        }
     }
 }
