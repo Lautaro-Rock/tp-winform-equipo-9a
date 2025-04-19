@@ -89,7 +89,7 @@ namespace Negocio
 
             try
             {
-                data.setearConsulta("DELETE FROM ARTICULOS WHERE Nombre='"+nuevo.Nombre+"'");
+                data.setearConsulta("DELETE FROM ARTICULOS WHERE Id='"+nuevo.ID+"'");
                 data.ejecutarAccion();
 
             }

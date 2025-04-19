@@ -22,11 +22,15 @@ namespace TpWinForm_Equipo9A
 
         private void Form2_Load(object sender, EventArgs e)
         {
-            ArticuloNegocio negocio = new ArticuloNegocio();
-            listaArticulo = negocio.listar(); 
-            dgvArticulo.DataSource = listaArticulo;
-            dgvArticulo.Columns["UrlImagen"].Visible = false;
-            cargarImagen(listaArticulo[0].UrlImagen.ImagenUrl.ToString());
+            try
+            {
+                cargar();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.ToString());
+            }
         }
 
         private void dgvArticulo_SelectionChanged(object sender, EventArgs e)
@@ -47,7 +51,22 @@ namespace TpWinForm_Equipo9A
                 pbxArticulo.Load("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSf0ee70UsCrUU3czX7qfX0gCjXy9Qo8nfiuQ&s");
             }
         }
+        private void cargar()
+        {
+            try
+            {
+                ArticuloNegocio negocio = new ArticuloNegocio();
+                listaArticulo = negocio.listar();
+                dgvArticulo.DataSource = listaArticulo;
+                dgvArticulo.Columns["UrlImagen"].Visible = false;
+                cargarImagen(listaArticulo[0].UrlImagen.ImagenUrl.ToString());
+            }
+            catch (Exception ex)
+            {
 
+                throw ex; 
+            }
+        }
         private void buttonEdit_Click(object sender, EventArgs e)
         {
             Articulo Seleccionado;
@@ -55,6 +74,28 @@ namespace TpWinForm_Equipo9A
 
             Form3 modificar= new Form3(Seleccionado);
             modificar.ShowDialog();
+            cargar();
+        }
+
+        private void btnEliminarFisico_Click(object sender, EventArgs e)
+        {
+            ArticuloNegocio newNegocio = new ArticuloNegocio();
+            try
+            {
+                DialogResult respuesta = MessageBox.Show("El registro no se podrá recuperar. ¿Confirmar elección?", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (respuesta == DialogResult.Yes)
+                {
+                    Articulo Seleccionado;
+                    Seleccionado = (Articulo)dgvArticulo.CurrentRow.DataBoundItem;
+                    newNegocio.eliminar(Seleccionado);
+                    MessageBox.Show("Eliminado exitosamente");
+                    cargar();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
     }
 }

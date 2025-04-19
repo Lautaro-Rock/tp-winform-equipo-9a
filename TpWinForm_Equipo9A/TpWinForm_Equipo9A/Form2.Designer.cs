@@ -31,6 +31,7 @@
             this.dgvArticulo = new System.Windows.Forms.DataGridView();
             this.pbxArticulo = new System.Windows.Forms.PictureBox();
             this.buttonEdit = new System.Windows.Forms.Button();
+            this.btnEliminarFisico = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxArticulo)).BeginInit();
             this.SuspendLayout();
@@ -56,7 +57,7 @@
             // 
             // buttonEdit
             // 
-            this.buttonEdit.Location = new System.Drawing.Point(190, 398);
+            this.buttonEdit.Location = new System.Drawing.Point(12, 396);
             this.buttonEdit.Name = "buttonEdit";
             this.buttonEdit.Size = new System.Drawing.Size(246, 30);
             this.buttonEdit.TabIndex = 2;
@@ -64,11 +65,22 @@
             this.buttonEdit.UseVisualStyleBackColor = true;
             this.buttonEdit.Click += new System.EventHandler(this.buttonEdit_Click);
             // 
+            // btnEliminarFisico
+            // 
+            this.btnEliminarFisico.Location = new System.Drawing.Point(273, 396);
+            this.btnEliminarFisico.Name = "btnEliminarFisico";
+            this.btnEliminarFisico.Size = new System.Drawing.Size(246, 30);
+            this.btnEliminarFisico.TabIndex = 3;
+            this.btnEliminarFisico.Text = "Eliminacion fisica";
+            this.btnEliminarFisico.UseVisualStyleBackColor = true;
+            this.btnEliminarFisico.Click += new System.EventHandler(this.btnEliminarFisico_Click);
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(969, 450);
+            this.Controls.Add(this.btnEliminarFisico);
             this.Controls.Add(this.buttonEdit);
             this.Controls.Add(this.pbxArticulo);
             this.Controls.Add(this.dgvArticulo);
@@ -86,5 +98,6 @@
         private System.Windows.Forms.DataGridView dgvArticulo;
         private System.Windows.Forms.PictureBox pbxArticulo;
         private System.Windows.Forms.Button buttonEdit;
+        private System.Windows.Forms.Button btnEliminarFisico;
     }
 }
