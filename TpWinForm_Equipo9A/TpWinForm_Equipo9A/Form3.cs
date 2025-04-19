@@ -90,19 +90,21 @@ namespace TpWinForm_Equipo9A
             try
             {
                 cboMarca.DataSource = newMarca.lista();
+                cboMarca.ValueMember = "ID";
                 cboMarca.DisplayMember = "Descripcion";
-                cboMarca.ValueMember = "Id";
                 cboCategoria.DataSource = newCategoria.lista();
+                cboCategoria.ValueMember = "ID";
                 cboCategoria.DisplayMember = "Descripcion";
-                cboCategoria.ValueMember = "Id";
 
                 if (art != null) { 
                  newNombre.Text= art.Nombre;
                  inputCod.Text= art.Codigo;
                  inputPrecio.Text= art.Precio.ToString();
                  inputDescripcion.Text= art.Descripcion;
-                  cboMarca.SelectedValue = art.ID;
-                  cboCategoria.SelectedValue = art.ID;
+                 txtImagen.Text = art.UrlImagen.ImagenUrl;
+                 cargarImagen(art.UrlImagen.ImagenUrl);
+                 cboMarca.SelectedValue = art.Marca.ID;
+                 cboCategoria.SelectedValue = art.Categoria.ID;
                 }
 
             }
