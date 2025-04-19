@@ -28,29 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.labelCampo = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.cboCriterio = new System.Windows.Forms.ComboBox();
+            this.BotonBusqueda = new System.Windows.Forms.Button();
+            this.PanelResultadoBusq = new System.Windows.Forms.Panel();
+            this.cboCampo = new System.Windows.Forms.ComboBox();
+            this.txtFiltro = new System.Windows.Forms.TextBox();
+            this.dataGridViewFitro = new System.Windows.Forms.DataGridView();
+            this.pcBoxFiltro = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
+            this.PanelResultadoBusq.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewFitro)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcBoxFiltro)).BeginInit();
             this.SuspendLayout();
-            // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(27, 85);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(139, 29);
-            this.textBox1.TabIndex = 0;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // panel1
             // 
@@ -60,92 +56,24 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(430, 35);
+            this.panel1.Size = new System.Drawing.Size(744, 35);
             this.panel1.TabIndex = 3;
             // 
-            // label1
+            // button1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(24, 66);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(68, 18);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Nombre";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(24, 154);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(55, 18);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Marca";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(228, 66);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(81, 18);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Categoría";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Celulares",
-            "Televisores",
-            "Media",
-            "Audio"});
-            this.comboBox1.Location = new System.Drawing.Point(231, 85);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(139, 28);
-            this.comboBox1.TabIndex = 7;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(228, 154);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(57, 18);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "Precio";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
-            "Samsung",
-            "Apple",
-            "Sony",
-            "Huawei",
-            "Motorola"});
-            this.comboBox2.Location = new System.Drawing.Point(27, 173);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(139, 28);
-            this.comboBox2.TabIndex = 9;
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(231, 173);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(139, 28);
-            this.comboBox3.TabIndex = 10;
-            this.comboBox3.SelectedIndexChanged += new System.EventHandler(this.comboBox3_SelectedIndexChanged);
+            this.button1.BackColor = System.Drawing.Color.Black;
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("MS Reference Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(685, 1);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(59, 35);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "X";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label5
             // 
@@ -158,78 +86,169 @@
             this.label5.TabIndex = 0;
             this.label5.Text = "Buscar Artículos";
             // 
-            // button1
+            // labelCampo
             // 
-            this.button1.BackColor = System.Drawing.Color.Black;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("MS Reference Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(371, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(59, 35);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "X";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.labelCampo.AutoSize = true;
+            this.labelCampo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCampo.Location = new System.Drawing.Point(24, 70);
+            this.labelCampo.Name = "labelCampo";
+            this.labelCampo.Size = new System.Drawing.Size(62, 18);
+            this.labelCampo.TabIndex = 4;
+            this.labelCampo.Text = "Campo";
+            this.labelCampo.Click += new System.EventHandler(this.label1_Click);
             // 
-            // button2
+            // label2
             // 
-            this.button2.BackColor = System.Drawing.Color.Black;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Image = global::TpWinForm_Equipo9A.Properties.Resources.icons8_search_30;
-            this.button2.Location = new System.Drawing.Point(231, 232);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(139, 42);
-            this.button2.TabIndex = 11;
-            this.button2.Text = "Buscar ";
-            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(24, 138);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(47, 18);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Filtro";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(228, 70);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(64, 18);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Criterio";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
+            // 
+            // cboCriterio
+            // 
+            this.cboCriterio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboCriterio.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.cboCriterio.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboCriterio.FormattingEnabled = true;
+            this.cboCriterio.Location = new System.Drawing.Point(231, 91);
+            this.cboCriterio.Name = "cboCriterio";
+            this.cboCriterio.Size = new System.Drawing.Size(139, 28);
+            this.cboCriterio.TabIndex = 7;
+            this.cboCriterio.SelectedIndexChanged += new System.EventHandler(this.CampoCategoria_SelectedIndexChanged);
+            // 
+            // BotonBusqueda
+            // 
+            this.BotonBusqueda.BackColor = System.Drawing.Color.Black;
+            this.BotonBusqueda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BotonBusqueda.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BotonBusqueda.ForeColor = System.Drawing.Color.White;
+            this.BotonBusqueda.Image = global::TpWinForm_Equipo9A.Properties.Resources.icons8_search_30;
+            this.BotonBusqueda.Location = new System.Drawing.Point(420, 98);
+            this.BotonBusqueda.Name = "BotonBusqueda";
+            this.BotonBusqueda.Size = new System.Drawing.Size(139, 42);
+            this.BotonBusqueda.TabIndex = 11;
+            this.BotonBusqueda.Text = "Buscar ";
+            this.BotonBusqueda.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.BotonBusqueda.UseVisualStyleBackColor = false;
+            this.BotonBusqueda.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // PanelResultadoBusq
+            // 
+            this.PanelResultadoBusq.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.PanelResultadoBusq.Controls.Add(this.pcBoxFiltro);
+            this.PanelResultadoBusq.Controls.Add(this.dataGridViewFitro);
+            this.PanelResultadoBusq.Location = new System.Drawing.Point(7, 203);
+            this.PanelResultadoBusq.Name = "PanelResultadoBusq";
+            this.PanelResultadoBusq.Size = new System.Drawing.Size(725, 288);
+            this.PanelResultadoBusq.TabIndex = 12;
+            // 
+            // cboCampo
+            // 
+            this.cboCampo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboCampo.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.cboCampo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboCampo.FormattingEnabled = true;
+            this.cboCampo.Location = new System.Drawing.Point(27, 91);
+            this.cboCampo.Name = "cboCampo";
+            this.cboCampo.Size = new System.Drawing.Size(139, 28);
+            this.cboCampo.TabIndex = 14;
+            this.cboCampo.SelectedIndexChanged += new System.EventHandler(this.Campo_SelectedIndexChanged);
+            // 
+            // txtFiltro
+            // 
+            this.txtFiltro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFiltro.Location = new System.Drawing.Point(27, 159);
+            this.txtFiltro.Name = "txtFiltro";
+            this.txtFiltro.Size = new System.Drawing.Size(139, 26);
+            this.txtFiltro.TabIndex = 15;
+            // 
+            // dataGridViewFitro
+            // 
+            this.dataGridViewFitro.BackgroundColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.dataGridViewFitro.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewFitro.GridColor = System.Drawing.Color.White;
+            this.dataGridViewFitro.Location = new System.Drawing.Point(20, 14);
+            this.dataGridViewFitro.Name = "dataGridViewFitro";
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewFitro.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridViewFitro.Size = new System.Drawing.Size(489, 254);
+            this.dataGridViewFitro.TabIndex = 0;
+            this.dataGridViewFitro.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dataGridViewFitro.SelectionChanged += new System.EventHandler(this.dataGridViewFitro_SelectionChanged);
+            // 
+            // pcBoxFiltro
+            // 
+            this.pcBoxFiltro.BackColor = System.Drawing.Color.Black;
+            this.pcBoxFiltro.Location = new System.Drawing.Point(530, 0);
+            this.pcBoxFiltro.Name = "pcBoxFiltro";
+            this.pcBoxFiltro.Size = new System.Drawing.Size(207, 288);
+            this.pcBoxFiltro.TabIndex = 1;
+            this.pcBoxFiltro.TabStop = false;
+            this.pcBoxFiltro.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // Form6
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.ClientSize = new System.Drawing.Size(430, 450);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.comboBox3);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.comboBox1);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(744, 557);
+            this.Controls.Add(this.txtFiltro);
+            this.Controls.Add(this.cboCampo);
+            this.Controls.Add(this.PanelResultadoBusq);
+            this.Controls.Add(this.BotonBusqueda);
+            this.Controls.Add(this.cboCriterio);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.labelCampo);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.textBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form6";
             this.Text = "Form6";
             this.Load += new System.EventHandler(this.Form6_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.PanelResultadoBusq.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewFitro)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcBoxFiltro)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labelCampo;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox cboCriterio;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button BotonBusqueda;
+        private System.Windows.Forms.Panel PanelResultadoBusq;
+        private System.Windows.Forms.ComboBox cboCampo;
+        private System.Windows.Forms.TextBox txtFiltro;
+        private System.Windows.Forms.DataGridView dataGridViewFitro;
+        private System.Windows.Forms.PictureBox pcBoxFiltro;
     }
 }
