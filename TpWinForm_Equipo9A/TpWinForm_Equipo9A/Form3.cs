@@ -15,10 +15,17 @@ namespace TpWinForm_Equipo9A
 {
     public partial class Form3 : Form
     {
-        
+        private Articulo art=null;
+
         public Form3()
         {
             InitializeComponent();
+        }
+
+        public Form3(Articulo articulo)
+        {
+            InitializeComponent();
+            this.art = articulo;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -33,18 +40,35 @@ namespace TpWinForm_Equipo9A
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Articulo newArticulo = new Articulo();
+            //Articulo newArticulo = new Articulo();
             ArticuloNegocio newNegocio= new ArticuloNegocio();
             try
             {
-                newArticulo.Nombre = newNombre.Text;
-                newArticulo.Descripcion=inputDescripcion.Text;
-                newArticulo.Codigo=inputCod.Text;
-                newArticulo.Precio=inputPrecio.Value;
-                newArticulo.Marca = (Marca)cboMarca.SelectedItem;
-                newArticulo.Categoria = (Categoria)cboCategoria.SelectedItem;
-                newNegocio.agregar(newArticulo);
-                MessageBox.Show("Agregado exitosamente");
+                if (art == null)
+                {
+                    art = new Articulo();
+                }
+                art.Nombre = newNombre.Text;
+                art.Descripcion = inputDescripcion.Text;
+                art.Codigo = inputCod.Text;
+                art.Precio = inputPrecio.Value;
+                art.Marca = (Marca)cboMarca.SelectedItem;
+                art.Categoria = (Categoria)cboCategoria.SelectedItem;
+
+                if (art.ID != 0)
+                {
+                    newNegocio.editar(art);
+                    MessageBox.Show("Editado exitosamente");
+                }
+                else
+                {
+                    newNegocio.agregar(art);
+                    MessageBox.Show("Agregado exitosamente");
+                }
+
+                Close();
+
+
             }
             catch (Exception ex)
             {
@@ -64,7 +88,21 @@ namespace TpWinForm_Equipo9A
             try
             {
                 cboMarca.DataSource = newMarca.lista();
+                cboMarca.DisplayMember = "Descripcion";
+                cboMarca.ValueMember = "Id";
                 cboCategoria.DataSource = newCategoria.lista();
+                cboCategoria.DisplayMember = "Descripcion";
+                cboCategoria.ValueMember = "Id";
+
+                if (art != null) { 
+                 newNombre.Text= art.Nombre;
+                 inputCod.Text= art.Codigo;
+                 inputPrecio.Text= art.Precio.ToString();
+                 inputDescripcion.Text= art.Descripcion;
+                  cboMarca.SelectedValue = art.ID;
+                  cboCategoria.SelectedValue = art.ID;
+                }
+
             }
             catch (Exception ex)
             {
@@ -79,6 +117,11 @@ namespace TpWinForm_Equipo9A
         }
 
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cboMarca_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

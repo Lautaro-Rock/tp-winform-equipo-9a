@@ -50,11 +50,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Showcard Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(104, 24);
+            this.label1.Location = new System.Drawing.Point(159, 18);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(223, 27);
+            this.label1.Size = new System.Drawing.Size(140, 27);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Agregar producto";
+            this.label1.Text = "Productos ";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
@@ -95,18 +95,18 @@
             // newAceptar
             // 
             this.newAceptar.Font = new System.Drawing.Font("Showcard Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.newAceptar.Location = new System.Drawing.Point(109, 310);
+            this.newAceptar.Location = new System.Drawing.Point(109, 329);
             this.newAceptar.Name = "newAceptar";
             this.newAceptar.Size = new System.Drawing.Size(232, 40);
             this.newAceptar.TabIndex = 5;
-            this.newAceptar.Text = "Agregar producto ";
+            this.newAceptar.Text = "Continuar";
             this.newAceptar.UseVisualStyleBackColor = true;
             this.newAceptar.Click += new System.EventHandler(this.button1_Click);
             // 
             // newCancelar
             // 
             this.newCancelar.Font = new System.Drawing.Font("Showcard Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.newCancelar.Location = new System.Drawing.Point(164, 374);
+            this.newCancelar.Location = new System.Drawing.Point(164, 398);
             this.newCancelar.Name = "newCancelar";
             this.newCancelar.Size = new System.Drawing.Size(134, 40);
             this.newCancelar.TabIndex = 6;
@@ -185,9 +185,11 @@
             this.cboMarca.Name = "cboMarca";
             this.cboMarca.Size = new System.Drawing.Size(146, 21);
             this.cboMarca.TabIndex = 12;
+            this.cboMarca.SelectedIndexChanged += new System.EventHandler(this.cboMarca_SelectedIndexChanged);
             // 
             // cboCategoria
             // 
+            this.cboCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboCategoria.FormattingEnabled = true;
             this.cboCategoria.Location = new System.Drawing.Point(164, 274);
             this.cboCategoria.Name = "cboCategoria";
