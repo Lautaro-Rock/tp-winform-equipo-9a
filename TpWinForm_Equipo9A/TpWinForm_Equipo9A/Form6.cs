@@ -58,35 +58,64 @@ namespace TpWinForm_Equipo9A
 
         private void button2_Click(object sender, EventArgs e)
         {
+            
+
             ArticuloNegocio articuloNegocio = new ArticuloNegocio();
             try
             {
-                
-                string campo = cboCampo.SelectedItem.ToString();
-                string criterio = cboCampo.SelectedItem.ToString();
-                string filtro = txtFiltro.Text;
-                List<Articulo> list_filtrada = articuloNegocio.filtrar(campo, criterio, filtro); 
-                dataGridViewFitro.DataSource = list_filtrada;
-                pcBoxFiltro.Load(list_filtrada[0].UrlImagen.ImagenUrl.ToString());
-                pcBoxFiltro.SizeMode = PictureBoxSizeMode.StretchImage;
-                dataGridViewFitro.Columns["UrlImagen"].Visible = false;
-                dataGridViewFitro.Columns["Marca"].Visible = false;
-                dataGridViewFitro.Columns["Categoria"].Visible = false;
+                if(cboCampo.SelectedItem == null)
+                {
+                    MessageBox.Show("El desplegable Campo debe ser completado");
+                    txtFiltro.Text = "";
 
-                //PanelResultadoBusq.Controls.Add(imagen_filtrado);
-                //PanelResultadoBusq.Controls.Add(botonfiltrado);
+                }
+                else if (cboCriterio.SelectedItem == null)
+                {
+                    MessageBox.Show("El desplegable Criterio debe ser completado");
+                    txtFiltro.Text = "";
+                }
+                else if (txtFiltro.Text == "")
+                {
+                    MessageBox.Show("Debe escribir el filtro");
+                    
+                }
+                else {
+                    string campo = cboCampo.SelectedItem.ToString();
+                    string criterio = cboCriterio.SelectedItem.ToString();
+                    string filtro = txtFiltro.Text;
+                    List<Articulo> list_filtrada = articuloNegocio.filtrar(campo, criterio, filtro);
+                    dataGridViewFitro.DataSource = list_filtrada;
+                    pcBoxFiltro.Load(list_filtrada[0].UrlImagen.ImagenUrl.ToString());
+                    pcBoxFiltro.SizeMode = PictureBoxSizeMode.StretchImage;
+                    dataGridViewFitro.Columns["UrlImagen"].Visible = false;
+                    dataGridViewFitro.Columns["Marca"].Visible = false;
+                    dataGridViewFitro.Columns["Categoria"].Visible = false;
+                }
+
+                
+                //string criterio = cboCriterio.SelectedItem.ToString();
+                //string filtro = txtFiltro.Text;
+                //List<Articulo> list_filtrada = articuloNegocio.filtrar(campo, criterio, filtro);
+                //dataGridViewFitro.DataSource = list_filtrada;
+                //pcBoxFiltro.Load(list_filtrada[0].UrlImagen.ImagenUrl.ToString());
+                //pcBoxFiltro.SizeMode = PictureBoxSizeMode.StretchImage;
+                //dataGridViewFitro.Columns["UrlImagen"].Visible = false;
+                //dataGridViewFitro.Columns["Marca"].Visible = false;
+                //dataGridViewFitro.Columns["Categoria"].Visible = false;
 
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
             }
-                
-            
+
+
+            txtFiltro.Text = "";
         }
 
         private void Form6_Load(object sender, EventArgs e)
         {
+               
             ArticuloNegocio articuloNegocio = new ArticuloNegocio();
             articulos = articuloNegocio.listar();
             cboCampo.Items.Add("Por ID ARTICULO");

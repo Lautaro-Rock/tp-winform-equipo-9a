@@ -38,14 +38,14 @@
             this.cboCriterio = new System.Windows.Forms.ComboBox();
             this.BotonBusqueda = new System.Windows.Forms.Button();
             this.PanelResultadoBusq = new System.Windows.Forms.Panel();
+            this.pcBoxFiltro = new System.Windows.Forms.PictureBox();
+            this.dataGridViewFitro = new System.Windows.Forms.DataGridView();
             this.cboCampo = new System.Windows.Forms.ComboBox();
             this.txtFiltro = new System.Windows.Forms.TextBox();
-            this.dataGridViewFitro = new System.Windows.Forms.DataGridView();
-            this.pcBoxFiltro = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.PanelResultadoBusq.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewFitro)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcBoxFiltro)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewFitro)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -157,25 +157,15 @@
             this.PanelResultadoBusq.Size = new System.Drawing.Size(725, 288);
             this.PanelResultadoBusq.TabIndex = 12;
             // 
-            // cboCampo
+            // pcBoxFiltro
             // 
-            this.cboCampo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboCampo.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.cboCampo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboCampo.FormattingEnabled = true;
-            this.cboCampo.Location = new System.Drawing.Point(27, 91);
-            this.cboCampo.Name = "cboCampo";
-            this.cboCampo.Size = new System.Drawing.Size(139, 28);
-            this.cboCampo.TabIndex = 14;
-            this.cboCampo.SelectedIndexChanged += new System.EventHandler(this.Campo_SelectedIndexChanged);
-            // 
-            // txtFiltro
-            // 
-            this.txtFiltro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFiltro.Location = new System.Drawing.Point(27, 159);
-            this.txtFiltro.Name = "txtFiltro";
-            this.txtFiltro.Size = new System.Drawing.Size(139, 26);
-            this.txtFiltro.TabIndex = 15;
+            this.pcBoxFiltro.BackColor = System.Drawing.Color.Black;
+            this.pcBoxFiltro.Location = new System.Drawing.Point(530, 0);
+            this.pcBoxFiltro.Name = "pcBoxFiltro";
+            this.pcBoxFiltro.Size = new System.Drawing.Size(207, 288);
+            this.pcBoxFiltro.TabIndex = 1;
+            this.pcBoxFiltro.TabStop = false;
+            this.pcBoxFiltro.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // dataGridViewFitro
             // 
@@ -197,15 +187,25 @@
             this.dataGridViewFitro.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridViewFitro.SelectionChanged += new System.EventHandler(this.dataGridViewFitro_SelectionChanged);
             // 
-            // pcBoxFiltro
+            // cboCampo
             // 
-            this.pcBoxFiltro.BackColor = System.Drawing.Color.Black;
-            this.pcBoxFiltro.Location = new System.Drawing.Point(530, 0);
-            this.pcBoxFiltro.Name = "pcBoxFiltro";
-            this.pcBoxFiltro.Size = new System.Drawing.Size(207, 288);
-            this.pcBoxFiltro.TabIndex = 1;
-            this.pcBoxFiltro.TabStop = false;
-            this.pcBoxFiltro.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.cboCampo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboCampo.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.cboCampo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboCampo.FormattingEnabled = true;
+            this.cboCampo.Location = new System.Drawing.Point(27, 91);
+            this.cboCampo.Name = "cboCampo";
+            this.cboCampo.Size = new System.Drawing.Size(139, 28);
+            this.cboCampo.TabIndex = 14;
+            this.cboCampo.SelectedIndexChanged += new System.EventHandler(this.Campo_SelectedIndexChanged);
+            // 
+            // txtFiltro
+            // 
+            this.txtFiltro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFiltro.Location = new System.Drawing.Point(27, 159);
+            this.txtFiltro.Name = "txtFiltro";
+            this.txtFiltro.Size = new System.Drawing.Size(139, 26);
+            this.txtFiltro.TabIndex = 15;
             // 
             // Form6
             // 
@@ -229,8 +229,8 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.PanelResultadoBusq.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewFitro)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcBoxFiltro)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewFitro)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
