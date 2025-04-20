@@ -27,26 +27,43 @@ namespace TpWinForm_Equipo9A
 
         private bool validarFiltro()
         {
-            if (cboCampo.SelectedIndex < 0)
+            if (cboCampo.SelectedItem == null)
             {
-                MessageBox.Show("Por favor seleccionar un campo antes de buscar.");
+                MessageBox.Show("Por favor, seleccionar una opcion del desplegable Campo antes de realizar la busqueda.");
+                txtFiltro.Text = "";
                 return true;
             }
 
-            if (cboCampo.SelectedItem.ToString() == "Por ID ARTICULO")
+            if (cboCriterio.SelectedItem == null)
             {
-                if (string.IsNullOrEmpty(txtFiltro.Text)) 
-                {
-                    MessageBox.Show("Si la busqueda es por ID ARTICULO, el filtro no puede estar vacío");
-                    return true; 
-                }
+                MessageBox.Show("Por favor, seleccionar una opcion del desplegable Criterio antes de realizar la busqueda.");
+                txtFiltro.Text = "";
+                return true;
+            }
 
+            if (txtFiltro.Text == "")
+            {
+                MessageBox.Show("El filtro no puede quedar vacío");
+                return true;
+            }
+            else if(cboCampo.SelectedItem.ToString() == "Por ID ARTICULO")
+            {
                 if (!soloNumeros(txtFiltro.Text))
                 {
                     MessageBox.Show("Si la busqueda es por ID ARTICULO, solo se permiten numeros en el filtro.");
-                    return true; 
+                    txtFiltro.Text = "";
+                    return true;
                 }
             }
+            else
+            {
+                if (soloNumeros(txtFiltro.Text))
+                {
+                    MessageBox.Show("Si la busqueda es por " + cboCampo.Text + " solo se permiten letras en el filtro.");
+                    txtFiltro.Text = "";
+                    return true;
+                }
+            }            
             return false;
         }
 
@@ -72,7 +89,7 @@ namespace TpWinForm_Equipo9A
                 }
 
                 string campo = cboCampo.SelectedItem.ToString();
-                string criterio = cboCampo.SelectedItem.ToString();
+                string criterio = cboCriterio.SelectedItem.ToString();
                 string filtro = txtFiltro.Text;
                 List<Articulo> list_filtrada = articuloNegocio.filtrar(campo, criterio, filtro); 
                 dataGridViewFitro.DataSource = list_filtrada;
@@ -81,8 +98,7 @@ namespace TpWinForm_Equipo9A
                 dataGridViewFitro.Columns["Categoria"].Visible = false;
                 cargarImagen(list_filtrada[0].UrlImagen.ImagenUrl.ToString());
 
-                //PanelResultadoBusq.Controls.Add(imagen_filtrado);
-                //PanelResultadoBusq.Controls.Add(botonfiltrado);
+          
 
             }
 

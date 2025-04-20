@@ -188,7 +188,7 @@
             this.cboCampo.FormattingEnabled = true;
             this.cboCampo.Location = new System.Drawing.Point(27, 91);
             this.cboCampo.Name = "cboCampo";
-            this.cboCampo.Size = new System.Drawing.Size(139, 28);
+            this.cboCampo.Size = new System.Drawing.Size(159, 28);
             this.cboCampo.TabIndex = 14;
             this.cboCampo.SelectedIndexChanged += new System.EventHandler(this.Campo_SelectedIndexChanged);
             // 
