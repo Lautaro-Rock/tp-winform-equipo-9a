@@ -179,6 +179,7 @@
             this.dataGridViewFitro.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewFitro.Size = new System.Drawing.Size(489, 254);
             this.dataGridViewFitro.TabIndex = 0;
+            this.dataGridViewFitro.SelectionChanged += new System.EventHandler(this.dataGridViewFitro_SelectionChanged_1);
             // 
             // cboCampo
             // 

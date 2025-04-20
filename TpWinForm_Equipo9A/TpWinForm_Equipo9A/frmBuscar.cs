@@ -55,15 +55,7 @@ namespace TpWinForm_Equipo9A
                     return true;
                 }
             }
-            else
-            {
-                if (soloNumeros(txtFiltro.Text))
-                {
-                    MessageBox.Show("Si la busqueda es por " + cboCampo.Text + " solo se permiten letras en el filtro.");
-                    txtFiltro.Text = "";
-                    return true;
-                }
-            }            
+                     
             return false;
         }
 
@@ -104,7 +96,7 @@ namespace TpWinForm_Equipo9A
 
             catch (ArgumentOutOfRangeException)
             {
-                MessageBox.Show("Por favor, ingresar numeros mayores a 0 y dentro del rango de articulos en la Base de Datos.");
+                MessageBox.Show("Busqueda fuera de rango.");
             }
             catch (Exception ex)
             {
@@ -141,15 +133,6 @@ namespace TpWinForm_Equipo9A
             }
         }
 
-        private void dataGridViewFitro_SelectionChanged(object sender, EventArgs e)
-        {
-            
-            Articulo seleccionado = (Articulo)dataGridViewFitro.CurrentRow.DataBoundItem;
-            cargarImagen(seleccionado.UrlImagen.ImagenUrl.ToString());
-            
-
-        }
-
         private void cargarImagen(string imagen)
         {
             try
@@ -162,6 +145,12 @@ namespace TpWinForm_Equipo9A
 
                 pcBoxFiltro.Load("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSf0ee70UsCrUU3czX7qfX0gCjXy9Qo8nfiuQ&s");
             }
+        }
+
+        private void dataGridViewFitro_SelectionChanged_1(object sender, EventArgs e)
+        {
+            Articulo seleccionado = (Articulo)dataGridViewFitro.CurrentRow.DataBoundItem;
+            cargarImagen(seleccionado.UrlImagen.ImagenUrl.ToString());
         }
     }
 }
