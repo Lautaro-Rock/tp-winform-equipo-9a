@@ -19,7 +19,7 @@ namespace Negocio
 
         public AccesoDatos()
         {
-            conexion= new SqlConnection("server=localhost; database=CATALOGO_P3_DB; Persist Security Info=True; User ID= sa; Password=Contra993!");
+            conexion= new SqlConnection("server=.\\SQLEXPRESS; database=CATALOGO_P3_DB; integrated security=true");
             conexionCommand = new SqlCommand();
         }
         public void setearConsulta(string consulta)

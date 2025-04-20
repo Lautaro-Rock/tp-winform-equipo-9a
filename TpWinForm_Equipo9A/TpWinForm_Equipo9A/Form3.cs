@@ -52,7 +52,6 @@ namespace TpWinForm_Equipo9A
                 art.Descripcion = inputDescripcion.Text;
                 art.Codigo = inputCod.Text;
                 art.Precio = inputPrecio.Value;
-                art.UrlImagen = new Imagen();
                 art.UrlImagen.ImagenUrl = txtImagen.Text;
                 art.Marca = (Marca)cboMarca.SelectedItem;
                 art.Categoria = (Categoria)cboCategoria.SelectedItem;

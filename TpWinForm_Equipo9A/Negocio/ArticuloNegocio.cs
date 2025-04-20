@@ -17,7 +17,7 @@ namespace Negocio
 
             try 
 	        {
-                datos.setearConsulta("SELECT A.Id, A.Codigo, A.Nombre, A.Descripcion, A.Precio, A.IdMarca, M.Descripcion AS Marca, A.IdCategoria, C.Descripcion AS Categoria, I.ImagenUrl " +
+                datos.setearConsulta("SELECT A.Id, A.Codigo, A.Nombre, A.Descripcion, A.Precio, A.IdMarca, M.Descripcion AS Marca, A.IdCategoria, C.Descripcion AS Categoria, I.Id AS IdImagen, I.ImagenUrl " +
                     "FROM ARTICULOS A " +
                     "LEFT JOIN MARCAS M ON A.IdMarca = M.Id " +
                     "LEFT JOIN CATEGORIAS C ON A.IdCategoria = C.Id " +
@@ -33,6 +33,10 @@ namespace Negocio
                     aux.Precio = datos.ConexionDataReader["Precio"] != DBNull.Value ? Convert.ToDecimal(datos.ConexionDataReader["Precio"]):0m;
                     aux.Codigo = datos.ConexionDataReader["Codigo"] != DBNull.Value ? datos.ConexionDataReader["Codigo"].ToString() : "";
                     aux.UrlImagen = new Imagen();
+                    if (!(datos.ConexionDataReader["IdImagen"] is DBNull))
+                    {
+                        aux.UrlImagen.Id = (int)datos.ConexionDataReader["IdImagen"];
+                    }
                     aux.UrlImagen.ImagenUrl = datos.ConexionDataReader["ImagenUrl"] != DBNull.Value ? datos.ConexionDataReader["ImagenUrl"].ToString() : "";
                     aux.Marca = new Marca();
                     if (!(datos.ConexionDataReader["IdMarca"] is DBNull))
@@ -117,11 +121,15 @@ namespace Negocio
         {
             AccesoDatos datos = new AccesoDatos();
             try
-            {
-                datos.setearConsulta("UPDATE ARTICULOS Set Codigo=@Codigo, Nombre=@Nombre, Descripcion=@Descripcion, IdMarca=@IdMarca, IdCategoria=@IdCategoria, Precio=@Precio where Id=@Id");
+            { 
+                datos.setearConsulta("BEGIN TRANSACTION; " +
+                    "UPDATE ARTICULOS SET Codigo = @Codigo, Nombre = @Nombre, Descripcion = @Descripcion, IdMarca = @IdMarca, IdCategoria = @IdCategoria, Precio = @Precio WHERE Id = @Id; " +
+                    "UPDATE IMAGENES SET ImagenUrl = @ImagenUrl WHERE Id = "+edit.UrlImagen.Id+"" +
+                    "COMMIT;");
                 datos.setearParametro("@Codigo", edit.Codigo);
                 datos.setearParametro("@Nombre", edit.Nombre);
                 datos.setearParametro("@Descripcion", edit.Descripcion);
+                datos.setearParametro("@ImagenUrl", edit.UrlImagen.ImagenUrl);
                 datos.setearParametro("@IdMarca", edit.Marca.ID);
                 datos.setearParametro("@IdCategoria", edit.Categoria.ID);
                 datos.setearParametro("@Precio", edit.Precio);
