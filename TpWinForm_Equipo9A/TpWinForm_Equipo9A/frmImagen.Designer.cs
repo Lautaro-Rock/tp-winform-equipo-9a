@@ -1,6 +1,6 @@
 ﻿namespace TpWinForm_Equipo9A
 {
-    partial class Form4
+    partial class frmImagen
     {
         /// <summary>
         /// Required designer variable.
@@ -56,7 +56,7 @@
             this.lblUrlImagen.Size = new System.Drawing.Size(94, 18);
             this.lblUrlImagen.TabIndex = 1;
             this.lblUrlImagen.Text = "Url Imagen";
-            this.lblUrlImagen.Click += new System.EventHandler(this.label2_Click);
+            
             // 
             // txtUrlImagen
             // 
@@ -75,7 +75,7 @@
             this.newAceptar.TabIndex = 5;
             this.newAceptar.Text = "Agregar Imagen";
             this.newAceptar.UseVisualStyleBackColor = true;
-            this.newAceptar.Click += new System.EventHandler(this.button1_Click);
+            this.newAceptar.Click += new System.EventHandler(this.newAceptar_Click);
             // 
             // newCancelar
             // 
@@ -86,7 +86,7 @@
             this.newCancelar.TabIndex = 6;
             this.newCancelar.Text = "Salir";
             this.newCancelar.UseVisualStyleBackColor = true;
-            this.newCancelar.Click += new System.EventHandler(this.button2_Click);
+            this.newCancelar.Click += new System.EventHandler(this.newCancelar_Click);
             // 
             // pboImagen
             // 
@@ -97,7 +97,7 @@
             this.pboImagen.TabIndex = 7;
             this.pboImagen.TabStop = false;
             // 
-            // Form4
+            // frmImagen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -109,9 +109,9 @@
             this.Controls.Add(this.txtUrlImagen);
             this.Controls.Add(this.lblUrlImagen);
             this.Controls.Add(this.lblTitulo);
-            this.Name = "Form4";
+            this.Name = "frmImagen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form4";
+            this.Text = "Agregar Imagen";
             ((System.ComponentModel.ISupportInitialize)(this.pboImagen)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

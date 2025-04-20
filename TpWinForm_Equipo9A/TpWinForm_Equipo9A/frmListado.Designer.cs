@@ -1,6 +1,6 @@
 ﻿namespace TpWinForm_Equipo9A
 {
-    partial class Form2
+    partial class frmListado
     {
         /// <summary>
         /// Required designer variable.
@@ -86,7 +86,7 @@
             this.btnAgregarImagen.UseVisualStyleBackColor = true;
             this.btnAgregarImagen.Click += new System.EventHandler(this.btnAgregarImagen_Click);
             // 
-            // Form2
+            // frmListado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -96,9 +96,9 @@
             this.Controls.Add(this.buttonEdit);
             this.Controls.Add(this.pbxArticulo);
             this.Controls.Add(this.dgvArticulo);
-            this.Name = "Form2";
-            this.Text = "Form2";
-            this.Load += new System.EventHandler(this.Form2_Load);
+            this.Name = "frmListado";
+            this.Text = "Listado";
+            this.Load += new System.EventHandler(this.frmListado_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxArticulo)).EndInit();
             this.ResumeLayout(false);

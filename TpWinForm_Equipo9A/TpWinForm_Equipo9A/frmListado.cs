@@ -12,15 +12,15 @@ using Negocio;
 
 namespace TpWinForm_Equipo9A
 {
-    public partial class Form2 : Form
+    public partial class frmListado : Form
     {
         private List<Articulo> listaArticulo;
-        public Form2()
+        public frmListado()
         {
             InitializeComponent();
         }
 
-        private void Form2_Load(object sender, EventArgs e)
+        private void frmListado_Load(object sender, EventArgs e)
         {
             try
             {
@@ -75,7 +75,7 @@ namespace TpWinForm_Equipo9A
             {
                 MessageBox.Show("Este articulo no tiene una imagen asignada, por favor agregar una");
             }
-            Form3 modificar= new Form3(Seleccionado);
+            frmAgregar modificar= new frmAgregar(Seleccionado);
             modificar.ShowDialog();
             cargar();
         }
@@ -106,7 +106,7 @@ namespace TpWinForm_Equipo9A
             Articulo Seleccionado;
             Seleccionado = (Articulo)dgvArticulo.CurrentRow.DataBoundItem;
             
-            Form4 newVentana = new Form4(Seleccionado);
+            frmImagen newVentana = new frmImagen(Seleccionado);
             newVentana.ShowDialog();
             cargar();
         }

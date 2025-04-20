@@ -13,32 +13,22 @@ using Negocio;
 
 namespace TpWinForm_Equipo9A
 {
-    public partial class Form3 : Form
+    public partial class frmAgregar : Form
     {
         private Articulo art=null;
 
-        public Form3()
+        public frmAgregar()
         {
             InitializeComponent();
         }
 
-        public Form3(Articulo articulo)
+        public frmAgregar(Articulo articulo)
         {
             InitializeComponent();
             this.art = articulo;
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
+        private void newAceptar_Click(object sender, EventArgs e)
         {
             //Articulo newArticulo = new Articulo();
             ArticuloNegocio newNegocio= new ArticuloNegocio();
@@ -47,6 +37,7 @@ namespace TpWinForm_Equipo9A
                 if (art == null)
                 {
                     art = new Articulo();
+                    art.UrlImagen = new Imagen(); 
                 }
                 art.Nombre = newNombre.Text;
                 art.Descripcion = inputDescripcion.Text;
@@ -77,12 +68,12 @@ namespace TpWinForm_Equipo9A
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void newCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void Form3_Load(object sender, EventArgs e)
+        private void frmAgregar_Load(object sender, EventArgs e)
         {
             MarcaNegocio newMarca = new MarcaNegocio();
             CategoriaNegocio newCategoria = new CategoriaNegocio();
@@ -112,21 +103,6 @@ namespace TpWinForm_Equipo9A
 
                 MessageBox.Show(ex.ToString());
             }
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cboMarca_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void txtImagen_Leave(object sender, EventArgs e)

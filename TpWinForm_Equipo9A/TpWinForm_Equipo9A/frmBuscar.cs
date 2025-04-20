@@ -11,52 +11,21 @@ using Dominio;
 using Negocio;
 namespace TpWinForm_Equipo9A
 {
-    public partial class Form6: Form
+    public partial class frmBuscar: Form
     {
         private List<Articulo> articulos;
         
-        public Form6()
+        public frmBuscar()
         {
             InitializeComponent();
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-           
-          
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
+        private void btnCerrar_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void BotonBusqueda_Click(object sender, EventArgs e)
         {
             ArticuloNegocio articuloNegocio = new ArticuloNegocio();
             try
@@ -92,16 +61,6 @@ namespace TpWinForm_Equipo9A
             
         }
 
-        private void CampoCategoria_SelectedIndexChanged(object sender, EventArgs e)
-        {
-         
-        }
-
-        private void CampoMarca_SelectedIndexChanged(object sender, EventArgs e)
-        {
-         
-        }
-
         private void Campo_SelectedIndexChanged(object sender, EventArgs e)
         {
             string opcion = cboCampo.SelectedItem.ToString();
@@ -119,16 +78,6 @@ namespace TpWinForm_Equipo9A
                 cboCriterio.Items.Add("Termina con");
                 cboCriterio.Items.Add("Contiene");
             }
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void dataGridViewFitro_SelectionChanged(object sender, EventArgs e)

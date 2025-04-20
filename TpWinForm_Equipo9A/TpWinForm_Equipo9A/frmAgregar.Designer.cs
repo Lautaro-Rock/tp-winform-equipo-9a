@@ -1,6 +1,6 @@
 ﻿namespace TpWinForm_Equipo9A
 {
-    partial class Form3
+    partial class frmAgregar
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblTitulo = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.TextDescripcion = new System.Windows.Forms.Label();
             this.newNombre = new System.Windows.Forms.TextBox();
@@ -50,16 +50,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbxImagen)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // lblTitulo
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Showcard Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(159, 18);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(140, 27);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Productos ";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.lblTitulo.AutoSize = true;
+            this.lblTitulo.Font = new System.Drawing.Font("Showcard Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitulo.Location = new System.Drawing.Point(159, 18);
+            this.lblTitulo.Name = "lblTitulo";
+            this.lblTitulo.Size = new System.Drawing.Size(140, 27);
+            this.lblTitulo.TabIndex = 0;
+            this.lblTitulo.Text = "Productos ";
+           
             // 
             // label2
             // 
@@ -70,7 +70,7 @@
             this.label2.Size = new System.Drawing.Size(76, 18);
             this.label2.TabIndex = 1;
             this.label2.Text = "Nombre:";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
+           
             // 
             // TextDescripcion
             // 
@@ -105,7 +105,7 @@
             this.newAceptar.TabIndex = 7;
             this.newAceptar.Text = "Continuar";
             this.newAceptar.UseVisualStyleBackColor = true;
-            this.newAceptar.Click += new System.EventHandler(this.button1_Click);
+            this.newAceptar.Click += new System.EventHandler(this.newAceptar_Click);
             // 
             // newCancelar
             // 
@@ -116,7 +116,7 @@
             this.newCancelar.TabIndex = 8;
             this.newCancelar.Text = "Salir";
             this.newCancelar.UseVisualStyleBackColor = true;
-            this.newCancelar.Click += new System.EventHandler(this.button2_Click);
+            this.newCancelar.Click += new System.EventHandler(this.newCancelar_Click);
             // 
             // textCod
             // 
@@ -157,7 +157,7 @@
             0,
             0,
             0});
-            this.inputPrecio.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
+      
             // 
             // textPrecio
             // 
@@ -168,7 +168,7 @@
             this.textPrecio.Size = new System.Drawing.Size(65, 18);
             this.textPrecio.TabIndex = 10;
             this.textPrecio.Text = "Precio:";
-            this.textPrecio.Click += new System.EventHandler(this.label5_Click);
+           
             // 
             // lblMarca
             // 
@@ -189,7 +189,7 @@
             this.cboMarca.Name = "cboMarca";
             this.cboMarca.Size = new System.Drawing.Size(146, 21);
             this.cboMarca.TabIndex = 5;
-            this.cboMarca.SelectedIndexChanged += new System.EventHandler(this.cboMarca_SelectedIndexChanged);
+
             // 
             // cboCategoria
             // 
@@ -238,7 +238,7 @@
             this.pbxImagen.TabIndex = 17;
             this.pbxImagen.TabStop = false;
             // 
-            // Form3
+            // frmAgregar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -261,11 +261,11 @@
             this.Controls.Add(this.newNombre);
             this.Controls.Add(this.TextDescripcion);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Name = "Form3";
+            this.Controls.Add(this.lblTitulo);
+            this.Name = "frmAgregar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form3";
-            this.Load += new System.EventHandler(this.Form3_Load);
+            this.Text = "Productos";
+            this.Load += new System.EventHandler(this.frmAgregar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.inputPrecio)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxImagen)).EndInit();
             this.ResumeLayout(false);
@@ -275,7 +275,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label TextDescripcion;
         private System.Windows.Forms.TextBox newNombre;

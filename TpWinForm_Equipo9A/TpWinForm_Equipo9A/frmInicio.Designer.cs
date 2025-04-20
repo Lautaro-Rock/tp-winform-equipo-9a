@@ -49,7 +49,7 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Bienvenido al gestor de articulos";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            
             // 
             // subtitleLabel2
             // 
@@ -61,7 +61,7 @@
             this.subtitleLabel2.Size = new System.Drawing.Size(377, 30);
             this.subtitleLabel2.TabIndex = 1;
             this.subtitleLabel2.Text = "UTN ArtManager Products";
-            this.subtitleLabel2.Click += new System.EventHandler(this.label2_Click);
+           
             // 
             // buttonContinuar
             // 
@@ -75,7 +75,7 @@
             this.buttonContinuar.TabIndex = 2;
             this.buttonContinuar.Text = "Continuar ";
             this.buttonContinuar.UseVisualStyleBackColor = false;
-            this.buttonContinuar.Click += new System.EventHandler(this.button1_Click);
+            this.buttonContinuar.Click += new System.EventHandler(this.buttonContinuar_Click);
             // 
             // containerDevelopers
             // 
@@ -90,7 +90,7 @@
             this.containerDevelopers.TabIndex = 3;
             this.containerDevelopers.TabStop = false;
             this.containerDevelopers.Text = "Desarolladores";
-            this.containerDevelopers.Enter += new System.EventHandler(this.groupBox1_Enter);
+            
             // 
             // label4
             // 
@@ -121,7 +121,7 @@
             this.label2.Size = new System.Drawing.Size(176, 20);
             this.label2.TabIndex = 0;
             this.label2.Text = "Marcos Colombres";
-            this.label2.Click += new System.EventHandler(this.label2_Click_2);
+           
             // 
             // titlePrincipal
             // 
@@ -137,7 +137,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "titlePrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "Inicio";
             this.containerDevelopers.ResumeLayout(false);
             this.containerDevelopers.PerformLayout();
             this.ResumeLayout(false);

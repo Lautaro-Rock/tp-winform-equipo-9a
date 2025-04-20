@@ -13,21 +13,17 @@ using Negocio;
 
 namespace TpWinForm_Equipo9A
 {
-    public partial class Form4 : Form
+    public partial class frmImagen : Form
     {
         private Articulo art = null;
-        public Form4(Articulo art)
+        public frmImagen(Articulo art)
         {
             InitializeComponent();
             this.art = art;
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
 
-        }
-
-        private void button1_Click(object sender, EventArgs e)
+        private void newAceptar_Click(object sender, EventArgs e)
         {
             ArticuloNegocio newNegocio= new ArticuloNegocio();
             try
@@ -43,7 +39,7 @@ namespace TpWinForm_Equipo9A
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void newCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
         }
