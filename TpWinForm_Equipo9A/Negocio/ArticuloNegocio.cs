@@ -117,11 +117,32 @@ namespace Negocio
             }
         }
 
+        public void agregarImagen(Articulo art)
+        {
+            AccesoDatos datos = new AccesoDatos();
+
+            try
+            {
+                datos.setearConsulta("INSERT INTO IMAGENES VALUES(" + art.ID + ", '" + art.UrlImagen.ImagenUrl + "');");
+                datos.ejecutarAccion();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally { datos.cerrarConexion(); }
+        }
         public void editar(Articulo edit)
         {
             AccesoDatos datos = new AccesoDatos();
             try
             { 
+                if (edit.UrlImagen.Id == 0)
+                {
+                    agregarImagen(edit);
+                }
+
                 datos.setearConsulta("BEGIN TRANSACTION; " +
                     "UPDATE ARTICULOS SET Codigo = @Codigo, Nombre = @Nombre, Descripcion = @Descripcion, IdMarca = @IdMarca, IdCategoria = @IdCategoria, Precio = @Precio WHERE Id = @Id; " +
                     "UPDATE IMAGENES SET ImagenUrl = @ImagenUrl WHERE Id = "+edit.UrlImagen.Id+"" +
@@ -224,6 +245,10 @@ namespace Negocio
             catch(Exception ex)
             {
                 throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
             }
         }
     }

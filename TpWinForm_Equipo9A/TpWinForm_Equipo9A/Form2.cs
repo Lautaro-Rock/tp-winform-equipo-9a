@@ -71,7 +71,10 @@ namespace TpWinForm_Equipo9A
         {
             Articulo Seleccionado;
             Seleccionado=(Articulo)dgvArticulo.CurrentRow.DataBoundItem;
-
+            if(Seleccionado.UrlImagen.Id == 0)
+            {
+                MessageBox.Show("Este articulo no tiene una imagen asignada, por favor agregar una");
+            }
             Form3 modificar= new Form3(Seleccionado);
             modificar.ShowDialog();
             cargar();
