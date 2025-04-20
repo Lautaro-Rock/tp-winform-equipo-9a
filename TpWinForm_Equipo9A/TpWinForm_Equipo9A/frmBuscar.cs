@@ -25,12 +25,52 @@ namespace TpWinForm_Equipo9A
             this.Close();
         }
 
+        private bool validarFiltro()
+        {
+            if (cboCampo.SelectedIndex < 0)
+            {
+                MessageBox.Show("Por favor seleccionar un campo antes de buscar.");
+                return true;
+            }
+
+            if (cboCampo.SelectedItem.ToString() == "Por ID ARTICULO")
+            {
+                if (string.IsNullOrEmpty(txtFiltro.Text)) 
+                {
+                    MessageBox.Show("Si la busqueda es por ID ARTICULO, el filtro no puede estar vacío");
+                    return true; 
+                }
+
+                if (!soloNumeros(txtFiltro.Text))
+                {
+                    MessageBox.Show("Si la busqueda es por ID ARTICULO, solo se permiten numeros en el filtro.");
+                    return true; 
+                }
+            }
+            return false;
+        }
+
+        private bool soloNumeros(string cadena)
+        {
+            foreach (char caracter in cadena)
+            {
+                if (!char.IsNumber(caracter))
+                {
+                    return false; 
+                }
+            }
+            return true;
+        }
         private void BotonBusqueda_Click(object sender, EventArgs e)
         {
             ArticuloNegocio articuloNegocio = new ArticuloNegocio();
             try
             {
-                
+                if (validarFiltro())
+                {
+                    return; 
+                }
+
                 string campo = cboCampo.SelectedItem.ToString();
                 string criterio = cboCampo.SelectedItem.ToString();
                 string filtro = txtFiltro.Text;
@@ -44,6 +84,11 @@ namespace TpWinForm_Equipo9A
                 //PanelResultadoBusq.Controls.Add(imagen_filtrado);
                 //PanelResultadoBusq.Controls.Add(botonfiltrado);
 
+            }
+
+            catch (ArgumentOutOfRangeException)
+            {
+                MessageBox.Show("Por favor, ingresar numeros mayores a 0 y dentro del rango de articulos en la Base de Datos.");
             }
             catch (Exception ex)
             {

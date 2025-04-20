@@ -207,13 +207,13 @@ namespace Negocio
                         switch (criterio)
                         {
                             case "Comienza con":
-                                consulta += "Descripcion like '" + filtro + "%' ";
+                                consulta += "A.Descripcion like '" + filtro + "%' ";
                                 break;
                             case "Termina con":
-                                consulta += "Descripcion like '%" + filtro + "'";
+                                consulta += "A.Descripcion like '%" + filtro + "'";
                                 break;
                             default:
-                                consulta += "Descripcion like '%" + filtro + "%'";
+                                consulta += "A.Descripcion like '%" + filtro + "%'";
                                 break;
                         }
                         break;
