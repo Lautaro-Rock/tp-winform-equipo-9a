@@ -100,5 +100,15 @@ namespace TpWinForm_Equipo9A
                 MessageBox.Show(ex.ToString());
             }
         }
+
+        private void btnAgregarImagen_Click(object sender, EventArgs e)
+        {
+            Articulo Seleccionado;
+            Seleccionado = (Articulo)dgvArticulo.CurrentRow.DataBoundItem;
+            
+            Form4 newVentana = new Form4(Seleccionado);
+            newVentana.ShowDialog();
+            cargar();
+        }
     }
 }

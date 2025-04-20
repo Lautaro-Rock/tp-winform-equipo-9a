@@ -27,8 +27,7 @@ namespace TpWinForm_Equipo9A
 
         private void button5_Click(object sender, EventArgs e)
         {
-            Form4 ventana4 = new Form4();
-            ventana4.ShowDialog();
+            
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -50,8 +49,7 @@ namespace TpWinForm_Equipo9A
 
         private void button5_Click_1(object sender, EventArgs e)
         {
-            Form4 ventanaEliminar = new Form4();
-            ventanaEliminar.ShowDialog();
+            
         }
 
         private void button3_Click(object sender, EventArgs e)

@@ -15,9 +15,11 @@ namespace TpWinForm_Equipo9A
 {
     public partial class Form4 : Form
     {
-        public Form4()
+        private Articulo art = null;
+        public Form4(Articulo art)
         {
             InitializeComponent();
+            this.art = art;
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -27,14 +29,13 @@ namespace TpWinForm_Equipo9A
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Articulo newArticulo = new Articulo();
             ArticuloNegocio newNegocio= new ArticuloNegocio();
             try
             {
-                newArticulo.Nombre = newNombre.Text;
+                art.UrlImagen.ImagenUrl = txtUrlImagen.Text;
 
-                newNegocio.eliminar(newArticulo);
-                MessageBox.Show("Eliminado exitosamente");
+                newNegocio.agregarImagen(art);
+                MessageBox.Show("Agregado exitosamente");
             }
             catch (Exception ex)
             {
@@ -47,5 +48,21 @@ namespace TpWinForm_Equipo9A
             this.Close();
         }
 
+        private void cargarFoto(string imagen)
+        {
+            try
+            {
+                pboImagen.Load(imagen);
+            }
+            catch (Exception)
+            {
+
+                pboImagen.Load("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSf0ee70UsCrUU3czX7qfX0gCjXy9Qo8nfiuQ&s");
+            }
+        }
+        private void txtUrlImagen_Leave(object sender, EventArgs e)
+        {
+            cargarFoto(txtUrlImagen.Text);
+        }
     }
 }

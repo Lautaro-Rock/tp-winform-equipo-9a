@@ -28,40 +28,43 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.newNombre = new System.Windows.Forms.TextBox();
+            this.lblTitulo = new System.Windows.Forms.Label();
+            this.lblUrlImagen = new System.Windows.Forms.Label();
+            this.txtUrlImagen = new System.Windows.Forms.TextBox();
             this.newAceptar = new System.Windows.Forms.Button();
             this.newCancelar = new System.Windows.Forms.Button();
+            this.pboImagen = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pboImagen)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // lblTitulo
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Showcard Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(104, 51);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(225, 27);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Eliminar producto";
+            this.lblTitulo.AutoSize = true;
+            this.lblTitulo.Font = new System.Drawing.Font("Showcard Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitulo.Location = new System.Drawing.Point(132, 51);
+            this.lblTitulo.Name = "lblTitulo";
+            this.lblTitulo.Size = new System.Drawing.Size(188, 27);
+            this.lblTitulo.TabIndex = 0;
+            this.lblTitulo.Text = "Agregar Imagen";
             // 
-            // label2
+            // lblUrlImagen
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(106, 171);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(76, 18);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Nombre:";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
+            this.lblUrlImagen.AutoSize = true;
+            this.lblUrlImagen.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUrlImagen.Location = new System.Drawing.Point(75, 169);
+            this.lblUrlImagen.Name = "lblUrlImagen";
+            this.lblUrlImagen.Size = new System.Drawing.Size(94, 18);
+            this.lblUrlImagen.TabIndex = 1;
+            this.lblUrlImagen.Text = "Url Imagen";
+            this.lblUrlImagen.Click += new System.EventHandler(this.label2_Click);
             // 
-            // newNombre
+            // txtUrlImagen
             // 
-            this.newNombre.Location = new System.Drawing.Point(188, 169);
-            this.newNombre.Name = "newNombre";
-            this.newNombre.Size = new System.Drawing.Size(146, 20);
-            this.newNombre.TabIndex = 3;
+            this.txtUrlImagen.Location = new System.Drawing.Point(175, 170);
+            this.txtUrlImagen.Name = "txtUrlImagen";
+            this.txtUrlImagen.Size = new System.Drawing.Size(166, 20);
+            this.txtUrlImagen.TabIndex = 3;
+            this.txtUrlImagen.Leave += new System.EventHandler(this.txtUrlImagen_Leave);
             // 
             // newAceptar
             // 
@@ -70,7 +73,7 @@
             this.newAceptar.Name = "newAceptar";
             this.newAceptar.Size = new System.Drawing.Size(232, 40);
             this.newAceptar.TabIndex = 5;
-            this.newAceptar.Text = "Eliminar producto ";
+            this.newAceptar.Text = "Agregar Imagen";
             this.newAceptar.UseVisualStyleBackColor = true;
             this.newAceptar.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -85,20 +88,31 @@
             this.newCancelar.UseVisualStyleBackColor = true;
             this.newCancelar.Click += new System.EventHandler(this.button2_Click);
             // 
+            // pboImagen
+            // 
+            this.pboImagen.Location = new System.Drawing.Point(382, 51);
+            this.pboImagen.Name = "pboImagen";
+            this.pboImagen.Size = new System.Drawing.Size(442, 350);
+            this.pboImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pboImagen.TabIndex = 7;
+            this.pboImagen.TabStop = false;
+            // 
             // Form4
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(448, 450);
+            this.ClientSize = new System.Drawing.Size(867, 450);
+            this.Controls.Add(this.pboImagen);
             this.Controls.Add(this.newCancelar);
             this.Controls.Add(this.newAceptar);
-            this.Controls.Add(this.newNombre);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.txtUrlImagen);
+            this.Controls.Add(this.lblUrlImagen);
+            this.Controls.Add(this.lblTitulo);
             this.Name = "Form4";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form4";
+            ((System.ComponentModel.ISupportInitialize)(this.pboImagen)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -106,10 +120,11 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox newNombre;
+        private System.Windows.Forms.Label lblTitulo;
+        private System.Windows.Forms.Label lblUrlImagen;
+        private System.Windows.Forms.TextBox txtUrlImagen;
         private System.Windows.Forms.Button newAceptar;
         private System.Windows.Forms.Button newCancelar;
+        private System.Windows.Forms.PictureBox pboImagen;
     }
 }
