@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -97,6 +98,10 @@ namespace TpWinForm_Equipo9A
                  cboCategoria.SelectedValue = art.Categoria.ID;
                 }
 
+            }
+            catch (SqlException)
+            {
+                MessageBox.Show("Error al acceder a la Base de Datos");
             }
             catch (Exception ex)
             {

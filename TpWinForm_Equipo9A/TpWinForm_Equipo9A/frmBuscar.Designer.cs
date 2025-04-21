@@ -36,16 +36,16 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.cboCriterio = new System.Windows.Forms.ComboBox();
-            this.BotonBusqueda = new System.Windows.Forms.Button();
             this.PanelResultadoBusq = new System.Windows.Forms.Panel();
-            this.pcBoxFiltro = new System.Windows.Forms.PictureBox();
             this.dataGridViewFitro = new System.Windows.Forms.DataGridView();
             this.cboCampo = new System.Windows.Forms.ComboBox();
             this.txtFiltro = new System.Windows.Forms.TextBox();
+            this.pcBoxFiltro = new System.Windows.Forms.PictureBox();
+            this.BotonBusqueda = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.PanelResultadoBusq.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pcBoxFiltro)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewFitro)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcBoxFiltro)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -127,22 +127,6 @@
             this.cboCriterio.Size = new System.Drawing.Size(139, 28);
             this.cboCriterio.TabIndex = 7;
             // 
-            // BotonBusqueda
-            // 
-            this.BotonBusqueda.BackColor = System.Drawing.Color.Black;
-            this.BotonBusqueda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BotonBusqueda.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BotonBusqueda.ForeColor = System.Drawing.Color.White;
-            this.BotonBusqueda.Image = global::TpWinForm_Equipo9A.Properties.Resources.icons8_search_30;
-            this.BotonBusqueda.Location = new System.Drawing.Point(420, 98);
-            this.BotonBusqueda.Name = "BotonBusqueda";
-            this.BotonBusqueda.Size = new System.Drawing.Size(139, 42);
-            this.BotonBusqueda.TabIndex = 11;
-            this.BotonBusqueda.Text = "Buscar ";
-            this.BotonBusqueda.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.BotonBusqueda.UseVisualStyleBackColor = false;
-            this.BotonBusqueda.Click += new System.EventHandler(this.BotonBusqueda_Click);
-            // 
             // PanelResultadoBusq
             // 
             this.PanelResultadoBusq.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -153,19 +137,11 @@
             this.PanelResultadoBusq.Size = new System.Drawing.Size(725, 288);
             this.PanelResultadoBusq.TabIndex = 12;
             // 
-            // pcBoxFiltro
-            // 
-            this.pcBoxFiltro.BackColor = System.Drawing.Color.Black;
-            this.pcBoxFiltro.Location = new System.Drawing.Point(530, 0);
-            this.pcBoxFiltro.Name = "pcBoxFiltro";
-            this.pcBoxFiltro.Size = new System.Drawing.Size(207, 288);
-            this.pcBoxFiltro.TabIndex = 1;
-            this.pcBoxFiltro.TabStop = false;
-            // 
             // dataGridViewFitro
             // 
             this.dataGridViewFitro.BackgroundColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.dataGridViewFitro.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewFitro.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dataGridViewFitro.GridColor = System.Drawing.Color.White;
             this.dataGridViewFitro.Location = new System.Drawing.Point(20, 14);
             this.dataGridViewFitro.Name = "dataGridViewFitro";
@@ -201,6 +177,31 @@
             this.txtFiltro.Size = new System.Drawing.Size(139, 26);
             this.txtFiltro.TabIndex = 15;
             // 
+            // pcBoxFiltro
+            // 
+            this.pcBoxFiltro.BackColor = System.Drawing.Color.Black;
+            this.pcBoxFiltro.Location = new System.Drawing.Point(530, 0);
+            this.pcBoxFiltro.Name = "pcBoxFiltro";
+            this.pcBoxFiltro.Size = new System.Drawing.Size(207, 288);
+            this.pcBoxFiltro.TabIndex = 1;
+            this.pcBoxFiltro.TabStop = false;
+            // 
+            // BotonBusqueda
+            // 
+            this.BotonBusqueda.BackColor = System.Drawing.Color.Black;
+            this.BotonBusqueda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BotonBusqueda.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BotonBusqueda.ForeColor = System.Drawing.Color.White;
+            this.BotonBusqueda.Image = global::TpWinForm_Equipo9A.Properties.Resources.icons8_search_30;
+            this.BotonBusqueda.Location = new System.Drawing.Point(420, 98);
+            this.BotonBusqueda.Name = "BotonBusqueda";
+            this.BotonBusqueda.Size = new System.Drawing.Size(139, 42);
+            this.BotonBusqueda.TabIndex = 11;
+            this.BotonBusqueda.Text = "Buscar ";
+            this.BotonBusqueda.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.BotonBusqueda.UseVisualStyleBackColor = false;
+            this.BotonBusqueda.Click += new System.EventHandler(this.BotonBusqueda_Click);
+            // 
             // frmBuscar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -223,8 +224,8 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.PanelResultadoBusq.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pcBoxFiltro)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewFitro)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcBoxFiltro)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

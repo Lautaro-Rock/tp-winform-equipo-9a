@@ -41,5 +41,16 @@ namespace TpWinForm_Equipo9A
             ventanaBuscarArt.ShowDialog();
         }
 
+        private void btnMarcas_Click(object sender, EventArgs e)
+        {
+            frmMarcaListado ventanaMarca = new frmMarcaListado();
+            ventanaMarca.ShowDialog();
+        }
+
+        private void btnCategorias_Click(object sender, EventArgs e)
+        {
+            frmCategoriaListado ventanaCategoria = new frmCategoriaListado();
+            ventanaCategoria.ShowDialog();
+        }
     }
 }
