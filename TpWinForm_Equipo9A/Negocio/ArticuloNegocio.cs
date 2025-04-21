@@ -172,7 +172,12 @@ namespace Negocio
             AccesoDatos datos = new AccesoDatos();
             try
             {
-               string consulta = "Select A.Id, Codigo, Nombre, A.Descripcion, Precio, ImagenUrl, M.Id as IdMarca, M.Descripcion as Marca, C.Id as IdCategoria, C.Descripcion as Categoria From ARTICULOS A, IMAGENES, CATEGORIAS C, MARCAS M Where A.Id = IdArticulo and A.IdCategoria = C.Id and A.IdMarca = M.Id And ";
+               string consulta = "SELECT A.Id, A.Codigo, A.Nombre, A.Descripcion, A.Precio, A.IdMarca, M.Descripcion AS Marca, A.IdCategoria, C.Descripcion AS Categoria, I.Id AS IdImagen, I.ImagenUrl " +
+                    "FROM ARTICULOS A " +
+                    "LEFT JOIN MARCAS M ON A.IdMarca = M.Id " +
+                    "LEFT JOIN CATEGORIAS C ON A.IdCategoria = C.Id " +
+                    "LEFT JOIN IMAGENES I ON A.Id = I.IdArticulo " +
+                    "WHERE ";
                 switch (campo)
                 {
                     case "Por ID ARTICULO":
@@ -224,19 +229,29 @@ namespace Negocio
                 while (datos.ConexionDataReader.Read())
                 {
                     Articulo aux = new Articulo();
-                    aux.Nombre = (string)datos.ConexionDataReader["Nombre"];
-                    aux.Descripcion = (string)datos.ConexionDataReader["Descripcion"];
+                    aux.Nombre = datos.ConexionDataReader["Nombre"] != DBNull.Value ? datos.ConexionDataReader["Nombre"].ToString() : "";
+                    aux.Descripcion = datos.ConexionDataReader["Descripcion"] != DBNull.Value ? datos.ConexionDataReader["Descripcion"].ToString() : "";
                     aux.ID = (int)datos.ConexionDataReader["Id"];
                     aux.Precio = datos.ConexionDataReader["Precio"] != DBNull.Value ? Convert.ToDecimal(datos.ConexionDataReader["Precio"]) : 0m;
                     aux.Codigo = datos.ConexionDataReader["Codigo"] != DBNull.Value ? datos.ConexionDataReader["Codigo"].ToString() : "";
                     aux.UrlImagen = new Imagen();
-                    aux.UrlImagen.ImagenUrl = (string)datos.ConexionDataReader["ImagenUrl"];
+                    if (!(datos.ConexionDataReader["IdImagen"] is DBNull))
+                    {
+                        aux.UrlImagen.Id = (int)datos.ConexionDataReader["IdImagen"];
+                    }
+                    aux.UrlImagen.ImagenUrl = datos.ConexionDataReader["ImagenUrl"] != DBNull.Value ? datos.ConexionDataReader["ImagenUrl"].ToString() : "";
                     aux.Marca = new Marca();
-                    aux.Marca.ID = (int)datos.ConexionDataReader["IdMarca"];
-                    aux.Marca.Descripcion = (string)datos.ConexionDataReader["Marca"];
+                    if (!(datos.ConexionDataReader["IdMarca"] is DBNull))
+                    {
+                        aux.Marca.ID = (int)datos.ConexionDataReader["IdMarca"];
+                    }
+                    aux.Marca.Descripcion = datos.ConexionDataReader["Marca"] != DBNull.Value ? datos.ConexionDataReader["Marca"].ToString() : "";
                     aux.Categoria = new Categoria();
-                    aux.Categoria.ID = (int)datos.ConexionDataReader["IdCategoria"];
-                    aux.Categoria.Descripcion = (string)datos.ConexionDataReader["Categoria"];
+                    if (!(datos.ConexionDataReader["IdCategoria"] is DBNull))
+                    {
+                        aux.Categoria.ID = (int)datos.ConexionDataReader["IdCategoria"];
+                    }
+                    aux.Categoria.Descripcion = datos.ConexionDataReader["Categoria"] != DBNull.Value ? datos.ConexionDataReader["Categoria"].ToString() : "";
                     lista.Add(aux);
 
                 }

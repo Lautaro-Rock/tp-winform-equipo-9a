@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -60,6 +61,10 @@ namespace TpWinForm_Equipo9A
                 dgvArticulo.DataSource = listaArticulo;
                 dgvArticulo.Columns["UrlImagen"].Visible = false;
                 cargarImagen(listaArticulo[0].UrlImagen.ImagenUrl.ToString());
+            }
+            catch (SqlException)
+            {
+                MessageBox.Show("Error al acceder a la Base de Datos");
             }
             catch (Exception ex)
             {
